@@ -35,7 +35,7 @@ const StyledAboutSectionContent = styled(SectionContent)`
   margin-bottom: ${({ theme }) => rem(`${theme.spacing.lg}px`)};
 
   width: 60%;
-  
+
   background-color: #536565;
 
   padding: ${({ theme }) => rem(`${theme.spacing.md}px`)};
@@ -45,7 +45,7 @@ const StyledAboutSectionContent = styled(SectionContent)`
 `;
 
 const StyledAboutSectionPara = styled.p`
-margin-top: 0;
+  margin-top: 0;
   color: #ffffff;
 `;
 
@@ -70,48 +70,43 @@ const About = () => {
   return (
     <StyledAboutSection>
       <StyledAboutSectionContent id="about">
+        <StyledSectionHeading>About Me</StyledSectionHeading>
+        <StyledAboutSectionPara>
+          Hi, I'm Geraint, I'm a Senior Javascript/UX engineer based in London.
+        </StyledAboutSectionPara>
 
-          <StyledSectionHeading>About Me</StyledSectionHeading>
-          <StyledAboutSectionPara>
-            Hi, I'm Geraint, I'm a Senior Javascript/UX engineer based in
-            London.
-          </StyledAboutSectionPara>
+        <StyledAboutSectionPara>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco.
+        </StyledAboutSectionPara>
 
-          <StyledAboutSectionPara>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco.
-          </StyledAboutSectionPara>
+        <StyledAboutSectionPara>
+          I'm currently using the following stack:
+        </StyledAboutSectionPara>
 
-          <StyledAboutSectionPara>
-            I'm currently using the following stack:
-          </StyledAboutSectionPara>
-
-          <StyledStackList>
-            <StyledStackListItem>
-              <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" /> Javascript
-              (ES6+/ESNext)
-            </StyledStackListItem>
-            <StyledStackListItem>
-              <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" />{" "}
-              CSS/LESS/Styled Components
-            </StyledStackListItem>
-            <StyledStackListItem>
-              <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" />{" "}
-              React/Redux
-            </StyledStackListItem>
-            <StyledStackListItem>
-              <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" /> HTML5
-            </StyledStackListItem>
-            <StyledStackListItem>
-              <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" /> Node
-            </StyledStackListItem>
-            <StyledStackListItem>
-              <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" />{" "}
-              Jest/Enzyme
-            </StyledStackListItem>
-          </StyledStackList>
-
+        <StyledStackList>
+          <StyledStackListItem>
+            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" /> Javascript
+            (ES6+/ESNext)
+          </StyledStackListItem>
+          <StyledStackListItem>
+            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" />{" "}
+            CSS/LESS/Styled Components
+          </StyledStackListItem>
+          <StyledStackListItem>
+            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" /> React/Redux
+          </StyledStackListItem>
+          <StyledStackListItem>
+            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" /> HTML5
+          </StyledStackListItem>
+          <StyledStackListItem>
+            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" /> Node
+          </StyledStackListItem>
+          <StyledStackListItem>
+            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" /> Jest/Enzyme
+          </StyledStackListItem>
+        </StyledStackList>
       </StyledAboutSectionContent>
     </StyledAboutSection>
   );
