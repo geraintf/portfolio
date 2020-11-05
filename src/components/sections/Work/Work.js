@@ -8,11 +8,11 @@ import SectionContent from "../../SectionContent/SectionContent";
 import SectionHeading from "../../SectionHeading/SectionHeading";
 import SectionSubHeading from "../../SectionSubHeading/SectionSubHeading";
 
-import ProjectCard from "../../ProjectCard/ProjectCard";
+import WorkCard from "./components/WorkCard/WorkCard";
 
 const StyledWorkSection = styled(Section)``;
 
-const StyledProjectCards = styled.div`
+const StyledWorkCards = styled.div`
   margin-top: ${({ theme }) => rem(`${theme.spacing.xl}px`)};
 `;
 
@@ -63,7 +63,7 @@ const Work = ({ data }) => {
           engineering since 2015.
         </SectionSubHeading>
 
-        <StyledProjectCards>
+        <StyledWorkCards>
           {workData.map(
             ({
               title,
@@ -74,7 +74,7 @@ const Work = ({ data }) => {
               image,
               contentful_id,
             }) => (
-              <ProjectCard
+              <WorkCard
                 key={contentful_id}
                 title={title}
                 subTitle={subTitle}
@@ -85,7 +85,7 @@ const Work = ({ data }) => {
               />
             )
           )}
-        </StyledProjectCards>
+        </StyledWorkCards>
 
         <p>
           You can read more about my work experiences on{" "}

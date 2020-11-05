@@ -27,6 +27,7 @@ const StyledProjectCardImage = styled.img`
   width: 125px;
   height: 125px;
   border-radius: 4px;
+  opacity: 0.6;
 
   margin-right: ${({ theme }) => rem(`${theme.spacing.sm}px`)};
 `;

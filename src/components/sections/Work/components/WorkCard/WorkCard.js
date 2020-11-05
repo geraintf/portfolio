@@ -5,14 +5,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { rem } from "polished";
 
-import SkillLabels from "../SkillLabels/SkillLabels";
+import SkillLabels from "../../../../SkillLabels/SkillLabels";
 
-const StyledProjectCard = styled.div`
+const StyledWorkCard = styled.div`
   display: flex;
   margin-bottom: ${({ theme }) => rem(`${theme.spacing.lg}px`)};
 `;
 
-const StyledProjectCardBottom = styled.div`
+const StyledWorkCardBottom = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,7 @@ const StyledProjectCardBottom = styled.div`
   margin-top: ${({ theme }) => rem(`${theme.spacing.md}px`)};
 `;
 
-const StyledProjectCardContent = styled.div`
+const StyledWorkCardContent = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -29,12 +29,12 @@ const StyledProjectCardContent = styled.div`
   margin-left: ${({ theme }) => rem(`${theme.spacing.xl}px`)};
 `;
 
-const StyledProjectImageContainer = styled.div`
+const StyledWorkImageContainer = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const StyledProjectImage = styled.img`
+const StyledWorkImage = styled.img`
   height: 100px;
   width: 100px;
   margin: auto 0;
@@ -61,14 +61,14 @@ const StyledAnchorContainer = styled.div`
   }
 `;
 
-const ProjectCard = ({ title, subTitle, labels, body, viewUrl, image }) => {
+const WorkCard = ({ title, subTitle, labels, body, viewUrl, image }) => {
   return (
-    <StyledProjectCard>
-      <StyledProjectImageContainer>
-        <StyledProjectImage src={image.url} />
-      </StyledProjectImageContainer>
+    <StyledWorkCard>
+      <StyledWorkImageContainer>
+        <StyledWorkImage src={image.url} />
+      </StyledWorkImageContainer>
 
-      <StyledProjectCardContent>
+      <StyledWorkCardContent>
         <StyledTitle>{title}</StyledTitle>
 
         <StyledSubTitle>{subTitle}</StyledSubTitle>
@@ -76,7 +76,7 @@ const ProjectCard = ({ title, subTitle, labels, body, viewUrl, image }) => {
         {body ? <StyledBodyContainer>{body}</StyledBodyContainer> : null}
 
         {!labels && !viewUrl ? null : (
-          <StyledProjectCardBottom>
+          <StyledWorkCardBottom>
             {labels ? <SkillLabels skills={labels} /> : null}
 
             {viewUrl ? (
@@ -86,14 +86,14 @@ const ProjectCard = ({ title, subTitle, labels, body, viewUrl, image }) => {
                 </StyledAnchor>
               </StyledAnchorContainer>
             ) : null}
-          </StyledProjectCardBottom>
+          </StyledWorkCardBottom>
         )}
-      </StyledProjectCardContent>
-    </StyledProjectCard>
+      </StyledWorkCardContent>
+    </StyledWorkCard>
   );
 };
 
-ProjectCard.propTypes = {
+WorkCard.propTypes = {
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
   body: PropTypes.string,
@@ -104,10 +104,10 @@ ProjectCard.propTypes = {
   }).isRequired,
 };
 
-ProjectCard.defaultProps = {
+WorkCard.defaultProps = {
   body: undefined,
   viewUrl: undefined,
   labels: undefined,
 };
 
-export default ProjectCard;
+export default WorkCard;

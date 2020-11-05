@@ -91,7 +91,7 @@ const About = () => {
             (ES6+/ESNext)
           </StyledStackListItem>
           <StyledStackListItem>
-            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" />{" "}
+            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" />
             CSS/LESS/Styled Components
           </StyledStackListItem>
           <StyledStackListItem>
