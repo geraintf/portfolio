@@ -23,7 +23,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Vampiro One`,
+          `Fredoka+One`,
           `karla\:300,400,500,600,700,800`,
           `rubik\:400,500,600,700,800`,
         ],

@@ -24,7 +24,7 @@ const StyledProjectCardUpper = styled.div`
 `;
 
 const StyledProjectCardImage = styled.img`
-    border: 1px solid lightgrey;
+  border: 1px solid lightgrey;
   width: 100px;
   height: 100px;
   border-radius: 4px;
@@ -38,13 +38,11 @@ const StyledProjectCardTitle = styled.h3`
 `;
 
 const StyledProjectCardLower = styled.div`
-flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
-
-
 
 const StyledAnchor = styled.a``;
 
@@ -85,7 +83,6 @@ const ProjectCard = ({ title, body, labels, image, viewUrl, githubUrl }) => {
         <StyledBodyContainer>{body}</StyledBodyContainer>
 
         <SkillLabels skills={labels} />
-
       </StyledProjectCardLower>
     </StyledProjectCard>
   );

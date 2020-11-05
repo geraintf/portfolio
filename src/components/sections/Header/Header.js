@@ -49,7 +49,7 @@ const StyledHeaderTextArea = styled.div`
 const StyledHeaderImageArea = styled.div``;
 
 const StyledHeadline = styled.h1`
-  font-family: "Vampiro One", cursive;
+  font-family: "Fredoka One", cursive;
   font-size: ${rem("65px")};
   line-height: ${rem("65px")};
 
