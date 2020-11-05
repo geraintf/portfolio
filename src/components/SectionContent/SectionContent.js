@@ -11,9 +11,9 @@ const StyledSectionContent = styled.section`
   width: 100%;
 
   padding: ${({ theme }) => rem(`${theme.spacing.sm}px`)}
-    ${({ theme }) => rem(`${theme.spacing.sm}px`)}
     ${({ theme }) => rem(`${theme.spacing.lg}px`)}
-    ${({ theme }) => rem(`${theme.spacing.sm}px`)};
+    ${({ theme }) => rem(`${theme.spacing.lg}px`)}
+    ${({ theme }) => rem(`${theme.spacing.lg}px`)};
 `;
 
 export default StyledSectionContent;

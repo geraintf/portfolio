@@ -29,16 +29,13 @@ const StyledSectionHeading = styled(SectionHeading)`
 `;
 
 const StyledAboutSectionContent = styled(SectionContent)`
-  flex-direction: row;
-  justify-content: center;
+  align-items: flex-start;
 
   margin-top: ${({ theme }) => rem(`${theme.spacing.xl}px`)};
   margin-bottom: ${({ theme }) => rem(`${theme.spacing.lg}px`)};
 
   width: 60%;
-`;
-
-const StyledAboutSectionLeft = styled.div`
+  
   background-color: #536565;
 
   padding: ${({ theme }) => rem(`${theme.spacing.md}px`)};
@@ -47,29 +44,17 @@ const StyledAboutSectionLeft = styled.div`
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 `;
 
-const StyledAboutSectionRight = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const StyledAboutPicture = styled.img`
-  width: 150px;
-  height: 150px;
-
-  margin-left: ${({ theme }) => rem(`${theme.spacing.lg}px`)};
-
-  border: 1px solid #e5e5e5;
-
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-`;
-
 const StyledAboutSectionPara = styled.p`
+margin-top: 0;
   color: #ffffff;
 `;
 
 const StyledStackList = styled.ul`
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
 `;
 
 const StyledStackListItem = styled.li`
@@ -85,7 +70,7 @@ const About = () => {
   return (
     <StyledAboutSection>
       <StyledAboutSectionContent id="about">
-        <StyledAboutSectionLeft>
+
           <StyledSectionHeading>About Me</StyledSectionHeading>
           <StyledAboutSectionPara>
             Hi, I'm Geraint, I'm a Senior Javascript/UX engineer based in
@@ -126,11 +111,7 @@ const About = () => {
               Jest/Enzyme
             </StyledStackListItem>
           </StyledStackList>
-        </StyledAboutSectionLeft>
 
-        <StyledAboutSectionRight>
-          <StyledAboutPicture src="./gplaypattern_@2X.png" />
-        </StyledAboutSectionRight>
       </StyledAboutSectionContent>
     </StyledAboutSection>
   );
