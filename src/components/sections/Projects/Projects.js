@@ -54,7 +54,7 @@ const Projects = ({ data }) => {
   const seen = new Set();
 
   data
-    .sort((a, b) => a.order - b.order)
+    .sort((a, b) => b.order - a.order)
     .forEach(d => {
       if (seen.has(d.contentful_id)) return;
 

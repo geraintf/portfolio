@@ -24,36 +24,40 @@ const StyledProjectCardUpper = styled.div`
 `;
 
 const StyledProjectCardImage = styled.img`
-  width: 125px;
-  height: 125px;
+    border: 1px solid lightgrey;
+  width: 100px;
+  height: 100px;
   border-radius: 4px;
   opacity: 0.6;
 
-  margin-right: ${({ theme }) => rem(`${theme.spacing.sm}px`)};
+  margin-right: ${({ theme }) => rem(`${theme.spacing.md}px`)};
 `;
 
 const StyledProjectCardTitle = styled.h3`
   margin: 0;
 `;
 
-const StyledProjectCardLower = styled.div``;
-
-const StyledProjectCardBottom = styled.div`
-  display: flex;
-  justify-content: space-between;
+const StyledProjectCardLower = styled.div`
+flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 `;
+
+
 
 const StyledAnchor = styled.a``;
 
 const StyledAnchorContainer = styled.div`
+  margin-top: ${({ theme }) => rem(`${theme.spacing.xs}px`)};
+
   ${StyledAnchor} + ${StyledAnchor} {
-    margin-left: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+    margin-left: ${({ theme }) => rem(`${theme.spacing.sm}px`)};
   }
 `;
 
 const StyledBodyContainer = styled.p`
-  margin: ${({ theme }) => rem(`${theme.spacing.md}px`)} 0
-    ${({ theme }) => rem(`${theme.spacing.lg}px`)} 0;
+  margin: ${({ theme }) => rem(`${theme.spacing.md}px`)} 0;
 `;
 
 const ProjectCard = ({ title, body, labels, image, viewUrl, githubUrl }) => {
@@ -63,25 +67,25 @@ const ProjectCard = ({ title, body, labels, image, viewUrl, githubUrl }) => {
         <StyledProjectCardImage src={image.url} />
         <div>
           <StyledProjectCardTitle>{title}</StyledProjectCardTitle>
-        </div>
-      </StyledProjectCardUpper>
-      <StyledProjectCardLower>
-        <StyledBodyContainer>{body}</StyledBodyContainer>
-        <StyledProjectCardBottom>
-          <SkillLabels skills={labels} />
-
           <StyledAnchorContainer>
-            <StyledAnchor href={viewUrl} target="_blank">
-              <FontAwesomeIcon icon={faExternalLinkAlt} size="md" />
-            </StyledAnchor>
-
+            {viewUrl ? (
+              <StyledAnchor href={viewUrl} target="_blank">
+                <FontAwesomeIcon icon={faExternalLinkAlt} size="md" />
+              </StyledAnchor>
+            ) : null}
             {githubUrl ? (
               <StyledAnchor href={githubUrl} target="_blank">
                 <FontAwesomeIcon icon={faGithub} size="lg" />
               </StyledAnchor>
             ) : null}
           </StyledAnchorContainer>
-        </StyledProjectCardBottom>
+        </div>
+      </StyledProjectCardUpper>
+      <StyledProjectCardLower>
+        <StyledBodyContainer>{body}</StyledBodyContainer>
+
+        <SkillLabels skills={labels} />
+
       </StyledProjectCardLower>
     </StyledProjectCard>
   );

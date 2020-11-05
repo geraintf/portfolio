@@ -18,11 +18,11 @@ const GlobalStyles = createGlobalStyle`
     width: 1px;
   }
   
-  * {
+  h1, h2, h3, h4, h5, h6, div, span, p, a {
     font-family: 'Karla', serif;
     line-height: 1.5rem;
     font-size: ${rem("16px")};
-    color: ${({ theme }) => theme.colors.text}
+    color: ${({ theme }) => theme.colors.text};
   }
   
   h2, h3, h4, h5, h6 {
@@ -46,10 +46,6 @@ const GlobalStyles = createGlobalStyle`
   a {  
     &:hover {
       color: ${({ theme }) => `${theme.colors.highlight}`};
-      
-      path {
-        fill: ${({ theme }) => `${theme.colors.highlight}`};
-      }
     }
   }
   

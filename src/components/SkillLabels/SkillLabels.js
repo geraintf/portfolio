@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledLabelContainer = styled.div`
-  font-size: 14px;
+  font-size: 12px;
 `;
 
 const SkillLabels = ({ skills }) => (
