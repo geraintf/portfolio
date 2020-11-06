@@ -17,7 +17,7 @@ module.exports = {
       options: {
         spaceId: `f3sf7jzjujvy`,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        downloadLocal: true,
+        downloadLocal: process.env.NODE_ENV === "development",
       },
     },
     {
