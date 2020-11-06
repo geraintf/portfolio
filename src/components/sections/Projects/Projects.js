@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 import { rem } from "polished";
 
+import breakpoints from "../../../theme/breakpoints";
+
 import Section from "../../Section/Section";
 import SectionContent from "../../SectionContent/SectionContent";
 import SectionHeading from "../../SectionHeading/SectionHeading";
@@ -19,10 +21,21 @@ const StyledProjectList = styled.ul`
 
   display: grid;
 
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: ${({ theme }) => rem(`${theme.spacing.lg}px`)};
+  grid-template-columns: 1fr;
+  grid-gap: ${({ theme }) => rem(`${theme.spacing.md}px`)};
 
-  margin: ${({ theme }) => rem(`${theme.spacing.lg}px`)} 0;
+  margin: ${({ theme }) => rem(`${theme.spacing.md}px`)} 0;
+
+  @media ${breakpoints.mediumUp} {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+  }
+
+  @media ${breakpoints.largeUp} {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: ${({ theme }) => rem(`${theme.spacing.lg}px`)};
+    margin: ${({ theme }) => rem(`${theme.spacing.lg}px`)} 0;
+  }
 `;
 
 const query = graphql`

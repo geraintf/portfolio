@@ -2,6 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 
+import breakpoints from "../../../theme/breakpoints";
+
 import Section from "../../Section/Section";
 import SectionContent from "../../SectionContent/SectionContent";
 import SectionHeading from "../../SectionHeading/SectionHeading";
@@ -31,10 +33,24 @@ const StyledSectionHeading = styled(SectionHeading)`
 const StyledAboutSectionContent = styled(SectionContent)`
   align-items: flex-start;
 
-  margin-top: ${({ theme }) => rem(`${theme.spacing.xl}px`)};
-  margin-bottom: ${({ theme }) => rem(`${theme.spacing.lg}px`)};
+  margin: ${({ theme }) => rem(`${theme.spacing.lg}px`)}
+    ${({ theme }) => rem(`${theme.spacing.md}px`)}
+    ${({ theme }) => rem(`${theme.spacing.sm}px`)}
+    ${({ theme }) => rem(`${theme.spacing.md}px`)};
 
-  width: 60%;
+  @media ${breakpoints.mediumUp} {
+    margin: ${({ theme }) => rem(`${theme.spacing.lg}px`)} 0
+      ${({ theme }) => rem(`${theme.spacing.md}px`)} 0;
+
+    width: 80%;
+  }
+
+  @media ${breakpoints.largeUp} {
+    margin: ${({ theme }) => rem(`${theme.spacing.xl}px`)} 0
+      ${({ theme }) => rem(`${theme.spacing.lg}px`)} 0;
+
+    width: 60%;
+  }
 
   background-color: #536565;
 
@@ -59,10 +75,14 @@ const StyledStackList = styled.ul`
 
 const StyledStackListItem = styled.li`
   color: #ffffff;
-  width: 50%;
+  width: 100%;
 
   path {
     fill: ${({ theme }) => `${theme.colors.highlight}`};
+  }
+
+  @media ${breakpoints.smallUp} {
+    width: 50%;
   }
 `;
 
@@ -91,7 +111,7 @@ const About = () => {
             (ES6+/ESNext)
           </StyledStackListItem>
           <StyledStackListItem>
-            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" />
+            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" />{" "}
             CSS/LESS/Styled Components
           </StyledStackListItem>
           <StyledStackListItem>

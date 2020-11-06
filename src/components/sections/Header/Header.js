@@ -2,19 +2,30 @@ import React from "react";
 import styled from "styled-components";
 import { rem } from "polished";
 
+import breakpoints from "../../../theme/breakpoints";
+
 import Section from "../../Section/Section";
 import SectionContent from "../../SectionContent/SectionContent";
 import Navigation from "./components/Navigation/Navigation";
 
 const StyledHeaderSection = styled(Section)`
   background: url("./gplaypattern_@2X.png");
-  height: 500px;
-  border-bottom: 5px solid #536565;
+
+  border-bottom: 5px solid ${({ theme }) => theme.colors.text};
+
+  height: 350px;
+
+  @media ${breakpoints.smallUp} {
+    height: 500px;
+  }
 `;
 
 const StyledHeaderSectionContent = styled(SectionContent)`
   align-items: stretch;
-  margin-top: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+
+  @media ${breakpoints.smallUp} {
+    margin-top: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+  }
 `;
 
 const StyledHeaderUpper = styled.div`
@@ -38,7 +49,12 @@ const StyledHeaderTextArea = styled.div`
   max-width: ${rem("600px")};
 
   padding-left: ${({ theme }) => rem(`${theme.spacing.md}px`)};
-  margin-bottom: 100px;
+
+  margin-bottom: 30px;
+
+  @media ${breakpoints.smallUp} {
+    margin-bottom: 100px;
+  }
 
   display: flex;
   flex-direction: column;

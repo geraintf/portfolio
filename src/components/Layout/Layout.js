@@ -1,6 +1,7 @@
 import React from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { normalize } from "styled-normalize";
+import { Helmet } from "react-helmet";
 
 import theme from "../../theme/theme";
 import { rem } from "polished/lib/index";
@@ -49,10 +50,19 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   
+  * {
+    box-sizing: border-box;
+  }
+  
 `;
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Geraint Fisher</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </Helmet>
     <GlobalStyles />
     {children}
   </ThemeProvider>

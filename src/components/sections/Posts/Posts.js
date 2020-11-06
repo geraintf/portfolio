@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 import { rem } from "polished";
 
+import breakpoints from "../../../theme/breakpoints";
+
 import Section from "../../Section/Section";
 import SectionContent from "../../SectionContent/SectionContent";
 import SectionHeading from "../../SectionHeading/SectionHeading";
@@ -20,11 +22,19 @@ const StyledPostList = styled.ul`
 
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
-  grid-gap: ${({ theme }) => rem(`${theme.spacing.lg}px`)};
+  grid-template-columns: 1fr;
+  grid-gap: ${({ theme }) => rem(`${theme.spacing.md}px`)};
 
-  margin: ${({ theme }) => rem(`${theme.spacing.xl}px`)} 0
-    ${({ theme }) => rem(`${theme.spacing.lg}px`)} 0;
+  margin: ${({ theme }) => rem(`${theme.spacing.lg}px`)} 0
+    ${({ theme }) => rem(`${theme.spacing.md}px`)} 0;
+
+  @media ${breakpoints.mediumUp} {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: ${({ theme }) => rem(`${theme.spacing.lg}px`)};
+
+    margin: ${({ theme }) => rem(`${theme.spacing.lg}px`)} 0
+      ${({ theme }) => rem(`${theme.spacing.lg}px`)} 0;
+  }
 `;
 
 const StyledPostTitle = styled.h3`
@@ -46,9 +56,7 @@ const StyledPostBody = styled.div`
   font-size: 18px;
 `;
 
-const StyledPostAnchor = styled.a`
-  float: right;
-`;
+const StyledPostAnchor = styled.a``;
 
 const query = graphql`
   query PostEntries {

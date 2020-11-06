@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 import { rem } from "polished";
 
+import breakpoints from "../../../theme/breakpoints";
+
 import Section from "../../Section/Section";
 import SectionContent from "../../SectionContent/SectionContent";
 import SectionHeading from "../../SectionHeading/SectionHeading";
@@ -13,7 +15,15 @@ import WorkCard from "./components/WorkCard/WorkCard";
 const StyledWorkSection = styled(Section)``;
 
 const StyledWorkCards = styled.div`
-  margin-top: ${({ theme }) => rem(`${theme.spacing.xl}px`)};
+  margin-top: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+
+  @media ${breakpoints.mediumUp} {
+    margin-top: ${({ theme }) => rem(`${theme.spacing.lg}px`)};
+  }
+`;
+
+const StyledLinkedInSection = styled.p`
+  text-align: center;
 `;
 
 const query = graphql`
@@ -87,10 +97,10 @@ const Work = ({ data }) => {
           )}
         </StyledWorkCards>
 
-        <p>
+        <StyledLinkedInSection>
           You can read more about my work experiences on{" "}
           <a href="https://www.linkedin.com/in/geraint-fisher/">LinkedIn</a>.
-        </p>
+        </StyledLinkedInSection>
       </SectionContent>
     </StyledWorkSection>
   );
