@@ -15,7 +15,7 @@ const StyledSectionHeading = styled.h2`
     border-radius: 50%;
     height: 10px;
     width: 10px;
-    bottom: 1px;
+    bottom: 5px;
     right: -14px;
   }
 

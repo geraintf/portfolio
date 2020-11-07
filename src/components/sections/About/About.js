@@ -18,8 +18,8 @@ const StyledSectionHeading = styled(SectionHeading)`
   margin-bottom: ${spacing.md};
 
   &::after {
-    bottom: 6px;
-    right: -10px;
+    bottom: 7px;
+    right: -7px;
   }
 `;
 
