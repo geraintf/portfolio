@@ -4,12 +4,12 @@ import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 import { rem } from "polished";
 
-import breakpoints from "../../../theme/breakpoints";
+import breakpoints from "src/theme/breakpoints";
 
-import Section from "../../Section/Section";
-import SectionContent from "../../SectionContent/SectionContent";
-import SectionHeading from "../../SectionHeading/SectionHeading";
-import SectionSubHeading from "../../SectionSubHeading/SectionSubHeading";
+import Section from "src/components/Section/Section";
+import SectionContent from "src/components/SectionContent/SectionContent";
+import SectionHeading from "src/components/SectionHeading/SectionHeading";
+import SectionSubHeading from "src/components/SectionSubHeading/SectionSubHeading";
 
 import ProjectCard from "./components/ProjectCard/ProjectCard";
 

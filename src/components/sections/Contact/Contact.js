@@ -10,10 +10,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
-import Section from "../../Section/Section";
-import SectionContent from "../../SectionContent/SectionContent";
-import SectionHeading from "../../SectionHeading/SectionHeading";
-import SectionSubHeading from "../../SectionSubHeading/SectionSubHeading";
+import Section from "src/components/Section/Section";
+import SectionContent from "src/components/SectionContent/SectionContent";
+import SectionHeading from "src/components/SectionHeading/SectionHeading";
+import SectionSubHeading from "src/components/SectionSubHeading/SectionSubHeading";
 
 const StyledContactSection = styled(Section)`
   /* http://www.heropatterns.com/ */

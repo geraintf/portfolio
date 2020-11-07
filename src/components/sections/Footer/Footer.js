@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import Section from "../../Section/Section";
-import SectionContent from "../../SectionContent/SectionContent";
-import { rem } from "polished/lib/index";
+import Section from "src/components/Section/Section";
+import SectionContent from "src/components/SectionContent/SectionContent";
+import { rem } from "polished";
 
 const StyledSection = styled(Section)`
   background-color: #536565;

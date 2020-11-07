@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-import SkillLabels from "../../../../SkillLabels/SkillLabels";
+import SkillLabels from "src/components/SkillLabels/SkillLabels";
 
 const StyledProjectCard = styled.li`
   background-color: #fff;

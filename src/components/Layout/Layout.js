@@ -4,8 +4,8 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { normalize } from "styled-normalize";
 import { Helmet } from "react-helmet";
 
-import theme from "../../theme/theme";
-import { rem } from "polished/lib/index";
+import theme from "src/theme/theme";
+import { rem } from "polished";
 
 const GlobalStyles = createGlobalStyle`
   ${normalize}

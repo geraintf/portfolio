@@ -2,14 +2,14 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 
-import breakpoints from "../../../theme/breakpoints";
+import breakpoints from "src/theme/breakpoints";
 
-import Section from "../../Section/Section";
-import SectionContent from "../../SectionContent/SectionContent";
-import SectionHeading from "../../SectionHeading/SectionHeading";
+import Section from "src/components/Section/Section";
+import SectionContent from "src/components/SectionContent/SectionContent";
+import SectionHeading from "src/components/SectionHeading/SectionHeading";
 
 import styled from "styled-components";
-import { rem } from "polished/lib/index";
+import { rem } from "polished";
 
 const StyledAboutSection = styled(Section)``;
 
