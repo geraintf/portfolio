@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 import { rem } from "polished";
 
-import breakpoints from "src/theme/breakpoints";
+import { breakpoints } from "src/theme";
 
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";

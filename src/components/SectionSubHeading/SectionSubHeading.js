@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { rem } from "polished";
-import breakpoints from "src/theme/breakpoints";
+import { breakpoints } from "src/theme";
 
 const StyledSectionSubHeading = styled.p`
   text-align: center;

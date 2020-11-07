@@ -6,7 +6,7 @@ import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { rem } from "polished";
 
 import SkillLabels from "src/components/SkillLabels/SkillLabels";
-import breakpoints from "src/theme/breakpoints";
+import { breakpoints } from "src/theme";
 
 const StyledWorkCard = styled.div`
   display: flex;
