@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -8,18 +9,11 @@ import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
 import SectionHeading from "src/components/SectionHeading/SectionHeading";
 
-import styled from "styled-components";
-
-const StyledAboutSection = styled(Section)``;
-
 const StyledSectionHeading = styled(SectionHeading)`
   color: ${colors.textInvert};
-  width: 50px;
-
-  text-align: left;
-
   line-height: 1.1;
-
+  text-align: left;
+  width: 50px;
   margin-top: 0;
   margin-bottom: ${spacing.md};
 
@@ -31,8 +25,11 @@ const StyledSectionHeading = styled(SectionHeading)`
 
 const StyledAboutSectionContent = styled(SectionContent)`
   align-items: flex-start;
-
   margin: ${spacing.lg} ${spacing.md} ${spacing.sm} ${spacing.md};
+  padding: ${spacing.md};
+  background-color: ${colors.main};
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 
   @media ${breakpoints.mediumUp} {
     margin: ${spacing.lg} 0 ${spacing.md} 0;
@@ -45,13 +42,6 @@ const StyledAboutSectionContent = styled(SectionContent)`
 
     width: 60%;
   }
-
-  background-color: ${colors.main};
-
-  padding: ${spacing.md};
-
-  border-radius: 4px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 `;
 
 const StyledAboutSectionPara = styled.p`
@@ -68,59 +58,51 @@ const StyledStackListItem = styled.li`
   color: ${colors.textInvert};
   width: 100%;
 
-  path {
-    fill: ${colors.highlight};
-  }
-
   @media ${breakpoints.smallUp} {
     width: 50%;
   }
 `;
 
-const About = () => {
-  return (
-    <StyledAboutSection>
-      <StyledAboutSectionContent id="about">
-        <StyledSectionHeading>About Me</StyledSectionHeading>
-        <StyledAboutSectionPara>
-          Hi, I'm Geraint, I'm a Senior Javascript/UX engineer based in London.
-        </StyledAboutSectionPara>
+const About = () => (
+  <Section>
+    <StyledAboutSectionContent id="about">
+      <StyledSectionHeading>About Me</StyledSectionHeading>
 
-        <StyledAboutSectionPara>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco.
-        </StyledAboutSectionPara>
+      <StyledAboutSectionPara>
+        Hi, I'm Geraint, I'm a Senior Javascript/UX engineer based in London.
+      </StyledAboutSectionPara>
 
-        <StyledAboutSectionPara>
-          I'm currently using the following stack:
-        </StyledAboutSectionPara>
+      <StyledAboutSectionPara>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco.
+      </StyledAboutSectionPara>
 
-        <StyledStackList>
-          <StyledStackListItem>
-            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" /> Javascript
-            (ES6+/ESNext)
+      <StyledAboutSectionPara>
+        I'm currently using the following stack:
+      </StyledAboutSectionPara>
+
+      <StyledStackList>
+        {[
+          "Javascript (ES6+/ESNext)",
+          "CSS/LESS/Styled Components",
+          "React/Redux",
+          "HTML5",
+          "Node",
+          "Jest/Enzyme",
+        ].map((text, i) => (
+          <StyledStackListItem key={i}>
+            <FontAwesomeIcon
+              color={colors.highlight}
+              icon={faAngleDoubleRight}
+              size="sm"
+            />{" "}
+            {text}
           </StyledStackListItem>
-          <StyledStackListItem>
-            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" />{" "}
-            CSS/LESS/Styled Components
-          </StyledStackListItem>
-          <StyledStackListItem>
-            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" /> React/Redux
-          </StyledStackListItem>
-          <StyledStackListItem>
-            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" /> HTML5
-          </StyledStackListItem>
-          <StyledStackListItem>
-            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" /> Node
-          </StyledStackListItem>
-          <StyledStackListItem>
-            <FontAwesomeIcon icon={faAngleDoubleRight} size="sm" /> Jest/Enzyme
-          </StyledStackListItem>
-        </StyledStackList>
-      </StyledAboutSectionContent>
-    </StyledAboutSection>
-  );
-};
+        ))}
+      </StyledStackList>
+    </StyledAboutSectionContent>
+  </Section>
+);
 
 export default About;

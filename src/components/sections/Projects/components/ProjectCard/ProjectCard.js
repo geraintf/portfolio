@@ -6,6 +6,7 @@ import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import { spacing, colors } from "src/theme";
+
 import SkillLabels from "src/components/SkillLabels/SkillLabels";
 
 const StyledProjectCard = styled.li`
@@ -20,8 +21,10 @@ const StyledProjectCard = styled.li`
   padding: ${spacing.md};
 `;
 
-const StyledProjectCardUpper = styled.div`
+const StyledProjectCardUpperContent = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const StyledProjectCardImage = styled.img`
@@ -34,23 +37,21 @@ const StyledProjectCardImage = styled.img`
   margin-right: ${spacing.md};
 `;
 
-const StyledProjectCardTitle = styled.h3`
-  margin: 0;
+const StyledProjectCardUpper = styled.div`
+  display: flex;
 `;
 
 const StyledProjectCardLower = styled.div`
-  flex-grow: 1;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   justify-content: space-between;
 `;
 
-const StyledAnchor = styled.a``;
-
 const StyledAnchorContainer = styled.div`
   margin-top: ${spacing.xs};
 
-  ${StyledAnchor} + ${StyledAnchor} {
+  a + a {
     margin-left: ${spacing.sm};
   }
 `;
@@ -59,36 +60,35 @@ const StyledBodyContainer = styled.p`
   margin: ${spacing.md} 0;
 `;
 
-const ProjectCard = ({ title, body, labels, image, viewUrl, githubUrl }) => {
-  return (
-    <StyledProjectCard>
-      <StyledProjectCardUpper>
-        <StyledProjectCardImage src={image.url} />
-        <div>
-          <StyledProjectCardTitle>{title}</StyledProjectCardTitle>
-          <StyledAnchorContainer>
-            {viewUrl ? (
-              <StyledAnchor href={viewUrl} target="_blank">
-                <FontAwesomeIcon icon={faExternalLinkAlt} />
-              </StyledAnchor>
-            ) : null}
+const ProjectCard = ({ title, body, labels, image, viewUrl, githubUrl }) => (
+  <StyledProjectCard>
+    <StyledProjectCardUpper>
+      <StyledProjectCardImage src={image.url} />
+      <StyledProjectCardUpperContent>
+        <h3>{title}</h3>
+        <StyledAnchorContainer>
+          {viewUrl ? (
+            <a href={viewUrl} target="_blank" rel="noreferrer">
+              <FontAwesomeIcon icon={faExternalLinkAlt} />
+            </a>
+          ) : null}
 
-            {githubUrl ? (
-              <StyledAnchor href={githubUrl} target="_blank">
-                <FontAwesomeIcon icon={faGithub} size="lg" />
-              </StyledAnchor>
-            ) : null}
-          </StyledAnchorContainer>
-        </div>
-      </StyledProjectCardUpper>
-      <StyledProjectCardLower>
-        <StyledBodyContainer>{body}</StyledBodyContainer>
+          {githubUrl ? (
+            <a href={githubUrl} target="_blank" rel="noreferrer">
+              <FontAwesomeIcon icon={faGithub} size="lg" />
+            </a>
+          ) : null}
+        </StyledAnchorContainer>
+      </StyledProjectCardUpperContent>
+    </StyledProjectCardUpper>
 
-        <SkillLabels skills={labels} />
-      </StyledProjectCardLower>
-    </StyledProjectCard>
-  );
-};
+    <StyledProjectCardLower>
+      <StyledBodyContainer>{body}</StyledBodyContainer>
+
+      <SkillLabels skills={labels} />
+    </StyledProjectCardLower>
+  </StyledProjectCard>
+);
 
 ProjectCard.propTypes = {
   title: PropTypes.string.isRequired,

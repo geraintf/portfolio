@@ -44,12 +44,6 @@ const StyledPostDate = styled.p`
   margin: 0;
 `;
 
-const StyledPostDescription = styled.p``;
-
-const StyledPostBody = styled.div``;
-
-const StyledPostAnchor = styled.a``;
-
 const query = graphql`
   query PostEntries {
     allContentfulPostEntry {
@@ -92,12 +86,12 @@ const Posts = ({ data }) => {
                   dateStyle: "long",
                 })}
               </StyledPostDate>
-              <StyledPostBody>
-                <StyledPostDescription>{description}</StyledPostDescription>
-                <StyledPostAnchor href={url} target="_blank">
+              <div>
+                <p>{description}</p>
+                <a href={url} target="_blank" rel="noreferrer">
                   Read
-                </StyledPostAnchor>
-              </StyledPostBody>
+                </a>
+              </div>
             </StyledPost>
           ))}
         </StyledPostList>

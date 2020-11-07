@@ -10,6 +10,7 @@ import {
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 import { spacing, colors } from "src/theme";
+
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
 import SectionHeading from "src/components/SectionHeading/SectionHeading";
@@ -37,8 +38,6 @@ const StyledContactListItem = styled.li`
   }
 `;
 
-const StyledContactAnchor = styled.a``;
-
 const data = [
   {
     href: "mailto:geraint.fisher@gmail.com",
@@ -62,26 +61,24 @@ const data = [
   },
 ];
 
-const Contact = () => {
-  return (
-    <StyledContactSection>
-      <SectionContent id="contact">
-        <SectionHeading>Contact</SectionHeading>
+const Contact = () => (
+  <StyledContactSection>
+    <SectionContent id="contact">
+      <SectionHeading>Contact</SectionHeading>
 
-        <SectionSubHeading>You can find me all over the web.</SectionSubHeading>
+      <SectionSubHeading>You can find me all over the web.</SectionSubHeading>
 
-        <StyledContactList>
-          {data.map(({ href, icon }, i) => (
-            <StyledContactListItem key={i}>
-              <StyledContactAnchor href={href}>
-                <FontAwesomeIcon icon={icon} size="2x" />
-              </StyledContactAnchor>
-            </StyledContactListItem>
-          ))}
-        </StyledContactList>
-      </SectionContent>
-    </StyledContactSection>
-  );
-};
+      <StyledContactList>
+        {data.map(({ href, icon }, i) => (
+          <StyledContactListItem key={i}>
+            <a href={href}>
+              <FontAwesomeIcon icon={icon} size="2x" />
+            </a>
+          </StyledContactListItem>
+        ))}
+      </StyledContactList>
+    </SectionContent>
+  </StyledContactSection>
+);
 
 export default Contact;

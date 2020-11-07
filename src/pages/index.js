@@ -8,18 +8,16 @@ import Posts from "src/components/sections/Posts/Posts";
 import Contact from "src/components/sections/Contact/Contact";
 import Footer from "src/components/sections/Footer/Footer";
 
-const Index = () => {
-  return (
-    <Fragment>
-      <Header />
-      <About />
-      <Work />
-      <Projects />
-      <Posts />
-      <Contact />
-      <Footer />
-    </Fragment>
-  );
-};
+const Index = () => (
+  <Fragment>
+    <Header />
+    <About />
+    <Work />
+    <Projects />
+    <Posts />
+    <Contact />
+    <Footer />
+  </Fragment>
+);
 
 export default Index;

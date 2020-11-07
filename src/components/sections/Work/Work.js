@@ -12,8 +12,6 @@ import SectionSubHeading from "src/components/SectionSubHeading/SectionSubHeadin
 
 import WorkCard from "./components/WorkCard/WorkCard";
 
-const StyledWorkSection = styled(Section)``;
-
 const StyledWorkCards = styled.div`
   margin-top: ${spacing.md};
 
@@ -64,7 +62,7 @@ const Work = ({ data }) => {
     });
 
   return (
-    <StyledWorkSection>
+    <Section>
       <SectionContent id="work">
         <SectionHeading>Work</SectionHeading>
 
@@ -102,7 +100,7 @@ const Work = ({ data }) => {
           <a href="https://www.linkedin.com/in/geraint-fisher/">LinkedIn</a>.
         </StyledLinkedInSection>
       </SectionContent>
-    </StyledWorkSection>
+    </Section>
   );
 };
 

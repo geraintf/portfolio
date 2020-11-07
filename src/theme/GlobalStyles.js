@@ -29,12 +29,17 @@ const GlobalStyles = createGlobalStyle`
     line-height: ${typography.lineHeight.h1};
   
     color: ${colors.headline};
+    
+    margin: 0;
   }
   
   h2, h3, h4, h5, h6 {
     font-family: ${typography.family.heading};
     font-weight: 600;
+    
     color: ${colors.text};
+    
+    margin: 0;
   }
   
   h2 {

@@ -9,7 +9,6 @@ import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
 import SectionHeading from "src/components/SectionHeading/SectionHeading";
 import SectionSubHeading from "src/components/SectionSubHeading/SectionSubHeading";
-
 import ProjectCard from "./components/ProjectCard/ProjectCard";
 
 const StyledProjectsSection = styled(Section)`
@@ -18,7 +17,6 @@ const StyledProjectsSection = styled(Section)`
 
 const StyledProjectList = styled.ul`
   display: grid;
-
   grid-template-columns: 1fr;
   grid-gap: ${spacing.md};
 
@@ -32,6 +30,7 @@ const StyledProjectList = styled.ul`
   @media ${breakpoints.largeUp} {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: ${spacing.lg};
+
     margin: ${spacing.lg} 0;
   }
 `;

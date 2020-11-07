@@ -4,8 +4,9 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
-import SkillLabels from "src/components/SkillLabels/SkillLabels";
 import { breakpoints, spacing, typography, colors } from "src/theme";
+
+import SkillLabels from "src/components/SkillLabels/SkillLabels";
 
 const StyledWorkCard = styled.div`
   display: flex;
@@ -23,8 +24,7 @@ const StyledWorkCard = styled.div`
   }
 
   &:last-child::after {
-    height: 0;
-    margin: 0;
+    display: none;
   }
 
   @media ${breakpoints.mediumUp} {
@@ -37,33 +37,18 @@ const StyledWorkCard = styled.div`
   }
 `;
 
-const StyledWorkCardBottom = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  @media ${breakpoints.mediumUp} {
-    flex-wrap: nowrap;
-  }
-
-  margin-top: ${spacing.md};
-`;
-
 const StyledWorkCardContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  text-align: center;
   align-items: center;
 
-  @media ${breakpoints.mediumUp} {
-    margin-left: ${spacing.xl};
+  text-align: center;
 
-    text-align: left;
+  @media ${breakpoints.mediumUp} {
     align-items: flex-start;
+    margin-left: ${spacing.xl};
+    text-align: left;
   }
 `;
 
@@ -98,7 +83,20 @@ const StyledBodyContainer = styled.p`
   margin: ${spacing.md} 0 0 0;
 `;
 
-const StyledAnchor = styled.a``;
+const StyledWorkCardBottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  width: 100%;
+
+  margin-top: ${spacing.md};
+
+  @media ${breakpoints.mediumUp} {
+    flex-wrap: nowrap;
+  }
+`;
 
 const StyledAnchorContainer = styled.div`
   min-width: 55px;
@@ -107,43 +105,37 @@ const StyledAnchorContainer = styled.div`
   @media ${breakpoints.mediumUp} {
     margin-top: 0;
   }
-
-  ${StyledAnchor} + ${StyledAnchor} {
-    margin-left: ${spacing.md};
-  }
 `;
 
-const WorkCard = ({ title, subTitle, labels, body, viewUrl, image }) => {
-  return (
-    <StyledWorkCard>
-      <StyledWorkImageContainer>
-        <StyledWorkImage src={image.url} />
-      </StyledWorkImageContainer>
+const WorkCard = ({ title, subTitle, labels, body, viewUrl, image }) => (
+  <StyledWorkCard>
+    <StyledWorkImageContainer>
+      <StyledWorkImage src={image.url} />
+    </StyledWorkImageContainer>
 
-      <StyledWorkCardContent>
-        <StyledTitle>{title}</StyledTitle>
+    <StyledWorkCardContent>
+      <StyledTitle>{title}</StyledTitle>
 
-        <StyledSubTitle>{subTitle}</StyledSubTitle>
+      <StyledSubTitle>{subTitle}</StyledSubTitle>
 
-        {body ? <StyledBodyContainer>{body}</StyledBodyContainer> : null}
+      {body ? <StyledBodyContainer>{body}</StyledBodyContainer> : null}
 
-        {!labels && !viewUrl ? null : (
-          <StyledWorkCardBottom>
-            {labels ? <SkillLabels skills={labels} /> : null}
+      {!labels && !viewUrl ? null : (
+        <StyledWorkCardBottom>
+          {labels ? <SkillLabels skills={labels} /> : null}
 
-            {viewUrl ? (
-              <StyledAnchorContainer>
-                <StyledAnchor href={viewUrl} target="_blank">
-                  View <FontAwesomeIcon icon={faExternalLinkAlt} size="sm" />
-                </StyledAnchor>
-              </StyledAnchorContainer>
-            ) : null}
-          </StyledWorkCardBottom>
-        )}
-      </StyledWorkCardContent>
-    </StyledWorkCard>
-  );
-};
+          {viewUrl ? (
+            <StyledAnchorContainer>
+              <a href={viewUrl} target="_blank" rel="noreferrer">
+                View <FontAwesomeIcon icon={faExternalLinkAlt} size="sm" />
+              </a>
+            </StyledAnchorContainer>
+          ) : null}
+        </StyledWorkCardBottom>
+      )}
+    </StyledWorkCardContent>
+  </StyledWorkCard>
+);
 
 WorkCard.propTypes = {
   title: PropTypes.string.isRequired,

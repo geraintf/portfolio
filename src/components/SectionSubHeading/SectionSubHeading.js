@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { breakpoints, typography } from "src/theme";
 
 const StyledSectionSubHeading = styled.p`
@@ -7,10 +8,6 @@ const StyledSectionSubHeading = styled.p`
   line-height: ${typography.lineHeight.sp};
 
   @media ${breakpoints.smallUp} {
-    max-width: 80%;
-  }
-
-  @media ${breakpoints.mediumUp} {
     max-width: 80%;
   }
 

@@ -20,7 +20,7 @@ const StyledSectionHeading = styled.h2`
   }
 
   @media ${breakpoints.smallUp} {
-    margin: ${spacing.lg} 0 0 0;
+    margin-top: ${spacing.lg};
   }
 `;
 
