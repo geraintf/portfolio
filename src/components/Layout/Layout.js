@@ -1,13 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import { ThemeProvider } from "styled-components";
 import { Helmet } from "react-helmet";
 
-import theme from "src/theme/theme";
 import GlobalStyles from "src/theme/GlobalStyles";
 
 const Layout = ({ children }) => (
-  <ThemeProvider theme={theme}>
+  <Fragment>
     <Helmet>
       <meta charSet="utf-8" />
       <title>Geraint Fisher</title>
@@ -15,7 +13,7 @@ const Layout = ({ children }) => (
     </Helmet>
     <GlobalStyles />
     {children}
-  </ThemeProvider>
+  </Fragment>
 );
 
 Layout.propTypes = {
