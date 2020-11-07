@@ -44,15 +44,14 @@ const StyledHeaderLower = styled.div`
 const StyledHeaderTextArea = styled.div`
   max-width: ${rem("600px")};
 
-  padding-left: ${spacing.md};
-  margin-bottom: ${spacing.lg};
+  margin-bottom: ${spacing.md};
 
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 
   @media ${breakpoints.smallUp} {
-    margin-bottom: ${spacing.xxl};
+    margin-bottom: ${spacing.xl};
   }
 `;
 
