@@ -28,6 +28,7 @@
     "gatsby-plugin-styled-components": "^3.3.14",
     "gatsby-plugin-typography": "^2.5.13",
     "gatsby-source-contentful": "^3.0.3",
+    "hamburger-react": "^2.3.0",
     "husky": "^4.3.0",
     "polished": "^4.0.3",
     "prop-types": "^15.7.2",
