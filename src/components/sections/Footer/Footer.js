@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-import { typography } from "src/theme";
+import { typography, colors } from "src/theme";
 
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
 
 const StyledSection = styled(Section)`
-  background-color: #536565;
+  background-color: ${colors.main};
 `;
 
 const StyledSectionContent = styled(SectionContent)`
   padding: 0;
-  color: #ffffff;
+  color: ${colors.textInvert};
   font-size: ${typography.size.sp};
   line-height: ${typography.lineHeight.sp};
 

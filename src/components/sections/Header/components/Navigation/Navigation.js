@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { spacing } from "src/theme";
+import { spacing, colors } from "src/theme";
 
 const StyledListItem = styled.li`
   margin: 0;
@@ -21,10 +21,10 @@ const StyledAnchor = styled.a`
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.text};
+    color: ${colors.text};
 
     text-decoration: underline;
-    text-decoration-color: ${({ theme }) => theme.colors.highlight};
+    text-decoration-color: ${colors.anchorHover};
     text-decoration-style: double;
   }
 `;

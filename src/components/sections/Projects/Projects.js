@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 
-import { breakpoints, spacing } from "src/theme";
+import { breakpoints, spacing, colors } from "src/theme";
 
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
@@ -13,7 +13,7 @@ import SectionSubHeading from "src/components/SectionSubHeading/SectionSubHeadin
 import ProjectCard from "./components/ProjectCard/ProjectCard";
 
 const StyledProjectsSection = styled(Section)`
-  background: #dde3e3;
+  background: ${colors.secondary};
 `;
 
 const StyledProjectList = styled.ul`

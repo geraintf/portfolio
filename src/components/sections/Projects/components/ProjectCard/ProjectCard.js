@@ -5,11 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-import { spacing } from "src/theme";
+import { spacing, colors } from "src/theme";
 import SkillLabels from "src/components/SkillLabels/SkillLabels";
 
 const StyledProjectCard = styled.li`
-  background-color: #fff;
+  background-color: ${colors.base.white};
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
 
@@ -25,7 +25,7 @@ const StyledProjectCardUpper = styled.div`
 `;
 
 const StyledProjectCardImage = styled.img`
-  border: 1px solid lightgrey;
+  border: 1px solid ${colors.base.grey};
   width: 100px;
   height: 100px;
   border-radius: 4px;

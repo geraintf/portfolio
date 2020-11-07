@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 import SkillLabels from "src/components/SkillLabels/SkillLabels";
-import { breakpoints, spacing, typography } from "src/theme";
+import { breakpoints, spacing, typography, colors } from "src/theme";
 
 const StyledWorkCard = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const StyledWorkCard = styled.div`
     content: "";
     display: block;
     height: 1px;
-    background: #e0e0e0;
+    background: ${colors.base.grey};
     width: 50%;
     margin: ${spacing.lg} auto 0 auto;
   }

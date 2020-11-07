@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 
-import { breakpoints, spacing } from "src/theme";
+import { breakpoints, spacing, colors } from "src/theme";
 
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
@@ -13,7 +13,7 @@ import styled from "styled-components";
 const StyledAboutSection = styled(Section)``;
 
 const StyledSectionHeading = styled(SectionHeading)`
-  color: #fff;
+  color: ${colors.textInvert};
   width: 50px;
 
   text-align: left;
@@ -46,7 +46,7 @@ const StyledAboutSectionContent = styled(SectionContent)`
     width: 60%;
   }
 
-  background-color: #536565;
+  background-color: ${colors.main};
 
   padding: ${spacing.md};
 
@@ -56,7 +56,7 @@ const StyledAboutSectionContent = styled(SectionContent)`
 
 const StyledAboutSectionPara = styled.p`
   margin-top: 0;
-  color: #ffffff;
+  color: ${colors.textInvert};
 `;
 
 const StyledStackList = styled.ul`
@@ -68,11 +68,11 @@ const StyledStackList = styled.ul`
 `;
 
 const StyledStackListItem = styled.li`
-  color: #ffffff;
+  color: ${colors.textInvert};
   width: 100%;
 
   path {
-    fill: ${({ theme }) => `${theme.colors.highlight}`};
+    fill: ${colors.highlight};
   }
 
   @media ${breakpoints.smallUp} {

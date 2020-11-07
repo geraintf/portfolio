@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
-import { spacing, typography } from "./index";
+import { spacing, typography, colors } from "./index";
 
 const GlobalStyles = createGlobalStyle`
   ${normalize}
@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: ${typography.size.p};
     line-height: ${typography.lineHeight.p};
     font-family: ${typography.family.body};
-    color: ${({ theme }) => theme.colors.text};
+    color: ${colors.text};
 
   }
   
@@ -28,13 +28,13 @@ const GlobalStyles = createGlobalStyle`
     font-size: ${typography.size.h1};
     line-height: ${typography.lineHeight.h1};
   
-    color: ${({ theme }) => theme.colors.highlight};
+    color: ${colors.headline};
   }
   
   h2, h3, h4, h5, h6 {
     font-family: ${typography.family.heading};
     font-weight: 600;
-    color: ${({ theme }) => theme.colors.text};
+    color: ${colors.text};
   }
   
   h2 {
@@ -54,7 +54,7 @@ const GlobalStyles = createGlobalStyle`
   
   a {  
     &:hover {
-      color: ${({ theme }) => `${theme.colors.highlight}`};
+      color: ${colors.anchorHover};
     }
   }
   

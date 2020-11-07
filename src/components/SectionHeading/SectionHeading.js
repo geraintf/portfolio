@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { breakpoints, spacing } from "src/theme";
+import { breakpoints, spacing, colors } from "src/theme";
 
 const StyledSectionHeading = styled.h2`
   text-align: center;
@@ -11,7 +11,7 @@ const StyledSectionHeading = styled.h2`
     content: "";
     display: inline-block;
     position: absolute;
-    background-color: ${({ theme }) => theme.colors.highlight};
+    background-color: ${colors.highlight};
     border-radius: 50%;
     height: 10px;
     width: 10px;
