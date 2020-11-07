@@ -25,8 +25,8 @@ module.exports = {
       options: {
         fonts: [
           `Fredoka+One`,
-          `karla\:300,400,500,600,700,800`,
-          `rubik\:400,500,600,700,800`,
+          `karla:300,400,500,600,700,800`,
+          `rubik:400,500,600,700,800`,
         ],
         display: "swap",
       },

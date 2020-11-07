@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { rem } from "polished";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -68,9 +69,10 @@ const ProjectCard = ({ title, body, labels, image, viewUrl, githubUrl }) => {
           <StyledAnchorContainer>
             {viewUrl ? (
               <StyledAnchor href={viewUrl} target="_blank">
-                <FontAwesomeIcon icon={faExternalLinkAlt} size="md" />
+                <FontAwesomeIcon icon={faExternalLinkAlt} />
               </StyledAnchor>
             ) : null}
+
             {githubUrl ? (
               <StyledAnchor href={githubUrl} target="_blank">
                 <FontAwesomeIcon icon={faGithub} size="lg" />
@@ -86,6 +88,23 @@ const ProjectCard = ({ title, body, labels, image, viewUrl, githubUrl }) => {
       </StyledProjectCardLower>
     </StyledProjectCard>
   );
+};
+
+ProjectCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  labels: PropTypes.array,
+  image: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+  }).isRequired,
+  viewUrl: PropTypes.string,
+  githubUrl: PropTypes.string,
+};
+
+ProjectCard.defaultProps = {
+  viewUrl: undefined,
+  githubUrl: undefined,
+  labels: [],
 };
 
 export default ProjectCard;

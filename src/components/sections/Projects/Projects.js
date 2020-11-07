@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 import { rem } from "polished";
@@ -111,6 +112,33 @@ const Projects = ({ data }) => {
       </SectionContent>
     </StyledProjectsSection>
   );
+};
+
+Projects.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      order: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      labels: PropTypes.array,
+      details: PropTypes.shape({
+        details: PropTypes.string.isRequired,
+      }).isRequired,
+      viewUrl: PropTypes.string,
+      image: PropTypes.shape({
+        file: PropTypes.shape({
+          url: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+      contentful_id: PropTypes.string.isRequired,
+      githubUrl: PropTypes.string,
+    })
+  ),
+};
+
+Projects.defaultProps = {
+  labels: [],
+  viewUrl: undefined,
+  githubUrl: undefined,
 };
 
 const ProjectsWithData = () => (

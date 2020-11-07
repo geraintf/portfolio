@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { normalize } from "styled-normalize";
 import { Helmet } from "react-helmet";
@@ -67,5 +68,9 @@ const Layout = ({ children }) => (
     {children}
   </ThemeProvider>
 );
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Layout;

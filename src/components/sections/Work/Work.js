@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 import { rem } from "polished";
@@ -89,7 +90,7 @@ const Work = ({ data }) => {
                 title={title}
                 subTitle={subTitle}
                 labels={labels}
-                body={details?.details}
+                body={details && details.details}
                 viewUrl={viewUrl}
                 image={{ url: image.file.url }}
               />
@@ -104,6 +105,32 @@ const Work = ({ data }) => {
       </SectionContent>
     </StyledWorkSection>
   );
+};
+
+Work.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      order: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      subTitle: PropTypes.string.isRequired,
+      labels: PropTypes.array,
+      details: PropTypes.shape({
+        details: PropTypes.string.isRequired,
+      }).isRequired,
+      viewUrl: PropTypes.string,
+      image: PropTypes.shape({
+        file: PropTypes.shape({
+          url: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+      contentful_id: PropTypes.string.isRequired,
+    })
+  ),
+};
+
+Work.defaultProps = {
+  labels: [],
+  viewUrl: undefined,
 };
 
 const WorkWithData = () => (

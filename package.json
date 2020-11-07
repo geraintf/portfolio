@@ -11,7 +11,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lint": "eslint . --fix"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -42,7 +43,9 @@
     "typography-theme-sutro": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "2.1.2"
+    "prettier": "2.1.2",
+    "eslint": "^7.13.0",
+    "eslint-plugin-react": "^7.21.5"
   },
   "repository": {
     "type": "git",
@@ -50,7 +53,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run format && git add ."
+      "pre-commit": "npm run format && npm run lint && git add . "
     }
   }
 }

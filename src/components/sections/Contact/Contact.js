@@ -72,8 +72,8 @@ const Contact = () => {
         <SectionSubHeading>You can find me all over the web.</SectionSubHeading>
 
         <StyledContactList>
-          {data.map(({ href, icon }) => (
-            <StyledContactListItem>
+          {data.map(({ href, icon }, i) => (
+            <StyledContactListItem key={i}>
               <StyledContactAnchor href={href}>
                 <FontAwesomeIcon icon={icon} size="2x" />
               </StyledContactAnchor>

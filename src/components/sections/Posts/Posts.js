@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 import { rem } from "polished";
@@ -92,8 +93,8 @@ const Posts = ({ data }) => {
         <SectionHeading>Posts</SectionHeading>
 
         <StyledPostList>
-          {postData.map(({ title, date, description, url }) => (
-            <StyledPost>
+          {postData.map(({ title, date, description, url, contentful_id }) => (
+            <StyledPost key={contentful_id}>
               <StyledPostTitle>{title}</StyledPostTitle>
               <StyledPostDate>
                 {new Date(date).toLocaleDateString(undefined, {
@@ -116,6 +117,18 @@ const Posts = ({ data }) => {
       </SectionContent>
     </StyledPostsSection>
   );
+};
+
+Posts.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+      contentful_id: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 const PostsWithData = () => (
