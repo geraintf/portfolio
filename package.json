@@ -34,13 +34,8 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
-    "react-typography": "^0.16.19",
     "styled-components": "^5.2.0",
-    "styled-normalize": "^8.0.7",
-    "typography": "^0.16.19",
-    "typography-theme-fairy-gates": "^0.16.19",
-    "typography-theme-lincoln": "^0.16.19",
-    "typography-theme-sutro": "^0.16.19"
+    "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
     "eslint": "^7.13.0",

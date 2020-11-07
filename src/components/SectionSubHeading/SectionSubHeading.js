@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { rem } from "polished";
-import { breakpoints } from "src/theme";
+import { breakpoints, typography } from "src/theme";
 
 const StyledSectionSubHeading = styled.p`
   text-align: center;
-  font-size: ${rem("14px")};
+  font-size: ${typography.size.sp};
+  line-height: ${typography.lineHeight.sp};
 
   @media ${breakpoints.smallUp} {
     max-width: 80%;

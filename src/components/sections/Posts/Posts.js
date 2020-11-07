@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 
-import { breakpoints, spacing } from "src/theme";
+import { breakpoints, spacing, typography } from "src/theme";
 
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
@@ -36,22 +36,18 @@ const StyledPostList = styled.ul`
 `;
 
 const StyledPostTitle = styled.h3`
-  font-size: 22px;
   margin: ${spacing.md} 0 ${spacing.xs};
 `;
 
 const StyledPostDate = styled.p`
-  font-size: 14px;
+  font-size: ${typography.size.sp};
+  line-height: ${typography.lineHeight.sp};
   margin: 0;
 `;
 
-const StyledPostDescription = styled.p`
-  font-size: 18px;
-`;
+const StyledPostDescription = styled.p``;
 
-const StyledPostBody = styled.div`
-  font-size: 18px;
-`;
+const StyledPostBody = styled.div``;
 
 const StyledPostAnchor = styled.a``;
 

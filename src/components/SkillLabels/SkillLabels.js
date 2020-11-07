@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import { spacing } from "src/theme";
+import { spacing, typography } from "src/theme";
 
 const StyledLabelContainer = styled.div`
-  font-size: 12px;
+  font-size: ${typography.size.sp};
+  line-height: ${typography.lineHeight.sp};
   width: 100%;
   padding-right: ${spacing.sm};
 `;

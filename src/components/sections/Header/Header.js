@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { rem } from "polished";
 
-import { breakpoints, spacing } from "src/theme";
+import { breakpoints, spacing, typography } from "src/theme";
 
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
@@ -65,18 +65,12 @@ const StyledHeaderTextArea = styled.div`
 const StyledHeaderImageArea = styled.div``;
 
 const StyledHeadline = styled.h1`
-  font-family: "Fredoka One", cursive;
-  font-size: ${rem("65px")};
-  line-height: ${rem("65px")};
-
-  color: ${({ theme }) => theme.colors.highlight};
-
   margin: 0 0 ${spacing.md} 0;
 `;
 
 const StyledTagline = styled.p`
-  font-size: ${rem("20px")};
-  line-height: ${rem("20px")};
+  font-size: ${typography.size.lp};
+  line-height: ${typography.lineHeight.lp};
 
   margin: 0;
 `;

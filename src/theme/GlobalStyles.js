@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import { rem } from "polished";
 import { normalize } from "styled-normalize";
-import { spacing } from "./index";
+import { spacing, typography } from "./index";
 
 const GlobalStyles = createGlobalStyle`
   ${normalize}
@@ -16,26 +15,38 @@ const GlobalStyles = createGlobalStyle`
     width: 1px;
   }
   
-  h1, h2, h3, h4, h5, h6, div, span, p, a {
-    font-family: 'Karla', serif;
-    line-height: 1.5rem;
-    font-size: ${rem("16px")};
+  div, span, p, a {
+    font-size: ${typography.size.p};
+    line-height: ${typography.lineHeight.p};
+    font-family: ${typography.family.body};
     color: ${({ theme }) => theme.colors.text};
+
+  }
+  
+  h1 {
+    font-family: ${typography.family.headline};
+    font-size: ${typography.size.h1};
+    line-height: ${typography.lineHeight.h1};
+  
+    color: ${({ theme }) => theme.colors.highlight};
   }
   
   h2, h3, h4, h5, h6 {
-    font-family: 'Rubik', sans-serif;
+    font-family: ${typography.family.heading};
     font-weight: 600;
+    color: ${({ theme }) => theme.colors.text};
   }
   
   h2 {
-    font-size: ${rem("30px")};
+    font-size: ${typography.size.h2};
+    line-height: ${typography.lineHeight.h2};
   }
   
-  h3 {
-    font-size: ${rem("22px")};
+  h3, h4, h5, h6 {
+    font-size: ${typography.size.h3};
+    line-height: ${typography.lineHeight.h3};
   }
-  
+    
   p {
     margin-block-start: ${spacing.md};
     margin-block-end: ${spacing.md};

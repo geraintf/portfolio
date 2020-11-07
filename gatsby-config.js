@@ -7,12 +7,6 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-root-import",
-    // {
-    //   resolve: `gatsby-plugin-typography`,
-    //   options: {
-    //     pathToConfigModule: `src/theme/typography`,
-    //   },
-    // },
     {
       resolve: `gatsby-source-contentful`,
       options: {
