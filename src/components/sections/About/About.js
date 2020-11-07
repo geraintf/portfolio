@@ -2,14 +2,13 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 
-import { breakpoints } from "src/theme";
+import { breakpoints, spacing } from "src/theme";
 
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
 import SectionHeading from "src/components/SectionHeading/SectionHeading";
 
 import styled from "styled-components";
-import { rem } from "polished";
 
 const StyledAboutSection = styled(Section)``;
 
@@ -22,7 +21,7 @@ const StyledSectionHeading = styled(SectionHeading)`
   line-height: 1.1;
 
   margin-top: 0;
-  margin-bottom: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+  margin-bottom: ${spacing.md};
 
   &::after {
     bottom: 6px;
@@ -33,28 +32,23 @@ const StyledSectionHeading = styled(SectionHeading)`
 const StyledAboutSectionContent = styled(SectionContent)`
   align-items: flex-start;
 
-  margin: ${({ theme }) => rem(`${theme.spacing.lg}px`)}
-    ${({ theme }) => rem(`${theme.spacing.md}px`)}
-    ${({ theme }) => rem(`${theme.spacing.sm}px`)}
-    ${({ theme }) => rem(`${theme.spacing.md}px`)};
+  margin: ${spacing.lg} ${spacing.md} ${spacing.sm} ${spacing.md};
 
   @media ${breakpoints.mediumUp} {
-    margin: ${({ theme }) => rem(`${theme.spacing.lg}px`)} 0
-      ${({ theme }) => rem(`${theme.spacing.md}px`)} 0;
+    margin: ${spacing.lg} 0 ${spacing.md} 0;
 
     width: 80%;
   }
 
   @media ${breakpoints.largeUp} {
-    margin: ${({ theme }) => rem(`${theme.spacing.xl}px`)} 0
-      ${({ theme }) => rem(`${theme.spacing.lg}px`)} 0;
+    margin: ${spacing.xl} 0 ${spacing.lg} 0;
 
     width: 60%;
   }
 
   background-color: #536565;
 
-  padding: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+  padding: ${spacing.md};
 
   border-radius: 4px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);

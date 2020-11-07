@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import { rem } from "polished";
-import { breakpoints } from "src/theme";
+import { breakpoints, spacing } from "src/theme";
 
 const StyledSectionHeading = styled.h2`
   text-align: center;
   position: relative;
 
-  margin: ${({ theme }) => rem(`${theme.spacing.md}px`)} 0 0 0;
+  margin: ${spacing.md} 0 0 0;
 
   &::after {
     content: "";
@@ -21,7 +20,7 @@ const StyledSectionHeading = styled.h2`
   }
 
   @media ${breakpoints.smallUp} {
-    margin: ${({ theme }) => rem(`${theme.spacing.lg}px`)} 0 0 0;
+    margin: ${spacing.lg} 0 0 0;
   }
 `;
 

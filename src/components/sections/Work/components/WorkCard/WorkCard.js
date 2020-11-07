@@ -3,14 +3,13 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
-import { rem } from "polished";
 
 import SkillLabels from "src/components/SkillLabels/SkillLabels";
-import { breakpoints } from "src/theme";
+import { breakpoints, spacing } from "src/theme";
 
 const StyledWorkCard = styled.div`
   display: flex;
-  margin-bottom: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+  margin-bottom: ${spacing.md};
 
   flex-direction: column;
 
@@ -20,7 +19,7 @@ const StyledWorkCard = styled.div`
     height: 1px;
     background: #e0e0e0;
     width: 50%;
-    margin: ${({ theme }) => rem(`${theme.spacing.lg}px`)} auto 0 auto;
+    margin: ${spacing.lg} auto 0 auto;
   }
 
   &:last-child::after {
@@ -29,7 +28,7 @@ const StyledWorkCard = styled.div`
   }
 
   @media ${breakpoints.mediumUp} {
-    margin-bottom: ${({ theme }) => rem(`${theme.spacing.lg}px`)};
+    margin-bottom: ${spacing.lg};
     flex-direction: row;
 
     &::after {
@@ -49,7 +48,7 @@ const StyledWorkCardBottom = styled.div`
     flex-wrap: nowrap;
   }
 
-  margin-top: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+  margin-top: ${spacing.md};
 `;
 
 const StyledWorkCardContent = styled.div`
@@ -61,7 +60,7 @@ const StyledWorkCardContent = styled.div`
   align-items: center;
 
   @media ${breakpoints.mediumUp} {
-    margin-left: ${({ theme }) => rem(`${theme.spacing.xl}px`)};
+    margin-left: ${spacing.xl};
 
     text-align: left;
     align-items: flex-start;
@@ -72,7 +71,7 @@ const StyledWorkImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+  margin-bottom: ${spacing.md};
 
   @media ${breakpoints.mediumUp} {
     margin-bottom: 0;
@@ -86,30 +85,30 @@ const StyledWorkImage = styled.img`
 `;
 
 const StyledTitle = styled.h3`
-  margin: 0 0 ${({ theme }) => rem(`${theme.spacing.xs}px`)} 0;
+  margin: 0 0 ${spacing.xs} 0;
 `;
 
 const StyledSubTitle = styled.span`
   font-size: 18px;
-  margin-bottom: ${({ theme }) => rem(`${theme.spacing.xs}px`)};
+  margin-bottom: ${spacing.xs};
 `;
 
 const StyledBodyContainer = styled.p`
-  margin: ${({ theme }) => rem(`${theme.spacing.md}px`)} 0 0 0;
+  margin: ${spacing.md} 0 0 0;
 `;
 
 const StyledAnchor = styled.a``;
 
 const StyledAnchorContainer = styled.div`
   min-width: 55px;
-  margin-top: ${({ theme }) => rem(`${theme.spacing.sm}px`)};
+  margin-top: ${spacing.sm};
 
   @media ${breakpoints.mediumUp} {
     margin-top: 0;
   }
 
   ${StyledAnchor} + ${StyledAnchor} {
-    margin-left: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+    margin-left: ${spacing.md};
   }
 `;
 

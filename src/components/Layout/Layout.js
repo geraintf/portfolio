@@ -5,6 +5,7 @@ import { normalize } from "styled-normalize";
 import { Helmet } from "react-helmet";
 
 import theme from "src/theme/theme";
+import { spacing } from "src/theme";
 import { rem } from "polished";
 
 const GlobalStyles = createGlobalStyle`
@@ -41,8 +42,8 @@ const GlobalStyles = createGlobalStyle`
   }
   
   p {
-    margin-block-start: ${({ theme }) => rem(`${theme.spacing.md}px`)};
-    margin-block-end: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+    margin-block-start: ${spacing.md};
+    margin-block-end: ${spacing.md};
   }
   
   a {  

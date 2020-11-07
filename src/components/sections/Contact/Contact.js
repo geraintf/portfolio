@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { rem } from "polished";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
@@ -10,6 +9,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
+import { spacing } from "src/theme";
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
 import SectionHeading from "src/components/SectionHeading/SectionHeading";
@@ -24,7 +24,7 @@ const StyledContactSection = styled(Section)`
 const StyledContactList = styled.ul`
   list-style: none;
   display: flex;
-  margin: ${({ theme }) => rem(`${theme.spacing.md}px`)} 0;
+  margin: ${spacing.md} 0;
   justify-content: center;
 `;
 
@@ -32,7 +32,7 @@ const StyledContactListItem = styled.li`
   margin: 0;
 
   & + & {
-    margin-left: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+    margin-left: ${spacing.md};
   }
 `;
 

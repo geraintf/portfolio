@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { rem } from "polished";
 
-import { breakpoints } from "src/theme";
+import { breakpoints, spacing } from "src/theme";
 
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
@@ -24,7 +24,7 @@ const StyledHeaderSectionContent = styled(SectionContent)`
   align-items: stretch;
 
   @media ${breakpoints.smallUp} {
-    margin-top: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+    margin-top: ${spacing.md};
   }
 `;
 
@@ -48,12 +48,12 @@ const StyledHeaderLower = styled.div`
 const StyledHeaderTextArea = styled.div`
   max-width: ${rem("600px")};
 
-  padding-left: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+  padding-left: ${spacing.md};
 
-  margin-bottom: 30px;
+  margin-bottom: ${spacing.lg};
 
   @media ${breakpoints.smallUp} {
-    margin-bottom: 100px;
+    margin-bottom: ${spacing.xxl};
   }
 
   display: flex;
@@ -71,7 +71,7 @@ const StyledHeadline = styled.h1`
 
   color: ${({ theme }) => theme.colors.highlight};
 
-  margin: 0 0 ${({ theme }) => rem(`${theme.spacing.md}px`)} 0;
+  margin: 0 0 ${spacing.md} 0;
 `;
 
 const StyledTagline = styled.p`

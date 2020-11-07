@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { rem } from "polished";
+
+import { spacing } from "src/theme";
 
 const StyledListItem = styled.li`
   margin: 0;
@@ -12,7 +13,7 @@ const StyledList = styled.ul`
   display: flex;
 
   ${StyledListItem} + ${StyledListItem} {
-    margin-left: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+    margin-left: ${spacing.md};
   }
 `;
 

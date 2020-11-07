@@ -2,9 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
-import { rem } from "polished";
 
-import { breakpoints } from "src/theme";
+import { breakpoints, spacing } from "src/theme";
 
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
@@ -23,19 +22,19 @@ const StyledProjectList = styled.ul`
   display: grid;
 
   grid-template-columns: 1fr;
-  grid-gap: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+  grid-gap: ${spacing.md};
 
-  margin: ${({ theme }) => rem(`${theme.spacing.md}px`)} 0;
+  margin: ${spacing.md} 0;
 
   @media ${breakpoints.mediumUp} {
     grid-template-columns: 1fr 1fr;
-    grid-gap: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+    grid-gap: ${spacing.md};
   }
 
   @media ${breakpoints.largeUp} {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: ${({ theme }) => rem(`${theme.spacing.lg}px`)};
-    margin: ${({ theme }) => rem(`${theme.spacing.lg}px`)} 0;
+    grid-gap: ${spacing.lg};
+    margin: ${spacing.lg} 0;
   }
 `;
 

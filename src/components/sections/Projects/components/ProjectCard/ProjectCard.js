@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { rem } from "polished";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
+import { spacing } from "src/theme";
 import SkillLabels from "src/components/SkillLabels/SkillLabels";
 
 const StyledProjectCard = styled.li`
@@ -17,7 +17,7 @@ const StyledProjectCard = styled.li`
   display: flex;
   flex-direction: column;
 
-  padding: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+  padding: ${spacing.md};
 `;
 
 const StyledProjectCardUpper = styled.div`
@@ -31,7 +31,7 @@ const StyledProjectCardImage = styled.img`
   border-radius: 4px;
   opacity: 0.6;
 
-  margin-right: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+  margin-right: ${spacing.md};
 `;
 
 const StyledProjectCardTitle = styled.h3`
@@ -48,15 +48,15 @@ const StyledProjectCardLower = styled.div`
 const StyledAnchor = styled.a``;
 
 const StyledAnchorContainer = styled.div`
-  margin-top: ${({ theme }) => rem(`${theme.spacing.xs}px`)};
+  margin-top: ${spacing.xs};
 
   ${StyledAnchor} + ${StyledAnchor} {
-    margin-left: ${({ theme }) => rem(`${theme.spacing.sm}px`)};
+    margin-left: ${spacing.sm};
   }
 `;
 
 const StyledBodyContainer = styled.p`
-  margin: ${({ theme }) => rem(`${theme.spacing.md}px`)} 0;
+  margin: ${spacing.md} 0;
 `;
 
 const ProjectCard = ({ title, body, labels, image, viewUrl, githubUrl }) => {

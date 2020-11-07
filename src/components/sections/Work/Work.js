@@ -2,9 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
-import { rem } from "polished";
 
-import { breakpoints } from "src/theme";
+import { breakpoints, spacing } from "src/theme";
 
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
@@ -16,10 +15,10 @@ import WorkCard from "./components/WorkCard/WorkCard";
 const StyledWorkSection = styled(Section)``;
 
 const StyledWorkCards = styled.div`
-  margin-top: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+  margin-top: ${spacing.md};
 
   @media ${breakpoints.mediumUp} {
-    margin-top: ${({ theme }) => rem(`${theme.spacing.lg}px`)};
+    margin-top: ${spacing.lg};
   }
 `;
 

@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { rem } from "polished";
-import { breakpoints } from "src/theme";
+import { breakpoints, spacing } from "src/theme";
 
 const StyledSectionContent = styled.section`
   display: flex;
@@ -11,13 +10,13 @@ const StyledSectionContent = styled.section`
   height: 100%;
   width: 100%;
 
-  padding: ${({ theme }) => rem(`${theme.spacing.md}px`)};
+  padding: ${spacing.md}};
 
   @media ${breakpoints.smallUp} {
-    padding: ${({ theme }) => rem(`${theme.spacing.sm}px`)}
-      ${({ theme }) => rem(`${theme.spacing.lg}px`)}
-      ${({ theme }) => rem(`${theme.spacing.lg}px`)}
-      ${({ theme }) => rem(`${theme.spacing.lg}px`)};
+    padding: ${spacing.sm}
+      ${spacing.lg}
+      ${spacing.lg}
+      ${spacing.lg};
   }
 `;
 
