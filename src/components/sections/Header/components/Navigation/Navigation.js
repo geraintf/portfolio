@@ -8,8 +8,6 @@ const StyledListItem = styled.li`
 `;
 
 const StyledList = styled.ul`
-  list-style: none;
-  margin: 0;
   display: flex;
 
   ${StyledListItem} + ${StyledListItem} {

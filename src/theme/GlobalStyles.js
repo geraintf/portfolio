@@ -62,6 +62,12 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
 `;
 
 export default GlobalStyles;

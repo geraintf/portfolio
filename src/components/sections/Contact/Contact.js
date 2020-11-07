@@ -24,7 +24,6 @@ const StyledContactSection = styled(Section)`
 `;
 
 const StyledContactList = styled.ul`
-  list-style: none;
   display: flex;
   margin: ${spacing.md} 0;
   justify-content: center;

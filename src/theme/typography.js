@@ -13,6 +13,7 @@ const typography = {
     lp: rem("20px"),
     p: rem("16px"),
     sp: rem("14px"),
+    xsp: rem("12px"),
   },
   lineHeight: {
     h1: rem("65px"),
@@ -21,6 +22,7 @@ const typography = {
     lp: rem("22px"),
     p: rem("20px"),
     sp: rem("18px"),
+    xsp: rem("16px"),
   },
 };
 

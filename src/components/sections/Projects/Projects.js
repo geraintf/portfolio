@@ -17,8 +17,6 @@ const StyledProjectsSection = styled(Section)`
 `;
 
 const StyledProjectList = styled.ul`
-  padding: 0;
-
   display: grid;
 
   grid-template-columns: 1fr;

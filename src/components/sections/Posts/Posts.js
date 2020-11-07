@@ -12,14 +12,13 @@ import SectionHeading from "src/components/SectionHeading/SectionHeading";
 const StyledPostsSection = styled(Section)``;
 
 const StyledPost = styled.li`
+  text-align: center;
   justify-content: space-between;
   display: flex;
   flex-direction: column;
 `;
 
 const StyledPostList = styled.ul`
-  padding: 0;
-
   display: grid;
 
   grid-template-columns: 1fr;

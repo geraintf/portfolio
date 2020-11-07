@@ -60,11 +60,8 @@ const StyledAboutSectionPara = styled.p`
 `;
 
 const StyledStackList = styled.ul`
-  list-style: none;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
 `;
 
 const StyledStackListItem = styled.li`

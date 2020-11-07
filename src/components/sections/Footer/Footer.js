@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { typography, colors } from "src/theme";
+import { spacing, typography, colors } from "src/theme";
 
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
@@ -11,12 +11,10 @@ const StyledSection = styled(Section)`
 `;
 
 const StyledSectionContent = styled(SectionContent)`
-  padding: 0;
+  padding: ${spacing.sm};
   color: ${colors.textInvert};
-  font-size: ${typography.size.sp};
-  line-height: ${typography.lineHeight.sp};
-
-  height: 25px;
+  font-size: ${typography.size.xsp};
+  line-height: ${typography.lineHeight.xsp};
 `;
 
 const Footer = () => (
