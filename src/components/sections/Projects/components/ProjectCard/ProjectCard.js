@@ -8,6 +8,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { spacing, colors } from "src/theme";
 
 import SkillLabels from "src/components/SkillLabels/SkillLabels";
+import Image from "src/components/Image/Image";
 
 const StyledProjectCard = styled.li`
   background-color: ${colors.base.white};
@@ -27,7 +28,7 @@ const StyledProjectCardUpperContent = styled.div`
   justify-content: space-between;
 `;
 
-const StyledProjectCardImage = styled.img`
+const StyledProjectCardImageWrapper = styled.div`
   border: 1px solid ${colors.base.grey};
   width: 100px;
   height: 100px;
@@ -63,7 +64,10 @@ const StyledBodyContainer = styled.p`
 const ProjectCard = ({ title, body, labels, image, viewUrl, githubUrl }) => (
   <StyledProjectCard>
     <StyledProjectCardUpper>
-      <StyledProjectCardImage src={image.url} />
+      <StyledProjectCardImageWrapper>
+        <Image loading="lazy" src={image.src} srcWebp={image.srcWebp} />
+      </StyledProjectCardImageWrapper>
+
       <StyledProjectCardUpperContent>
         <h3>{title}</h3>
         <StyledAnchorContainer>
@@ -95,7 +99,8 @@ ProjectCard.propTypes = {
   body: PropTypes.string.isRequired,
   labels: PropTypes.array,
   image: PropTypes.shape({
-    url: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
+    srcWebp: PropTypes.string.isRequired,
   }).isRequired,
   viewUrl: PropTypes.string,
   githubUrl: PropTypes.string,

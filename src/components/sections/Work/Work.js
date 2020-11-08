@@ -36,8 +36,9 @@ const query = graphql`
           details
         }
         image {
-          file {
-            url
+          fixed(height: 100, width: 100, quality: 100) {
+            srcWebp
+            src
           }
         }
         viewUrl
@@ -89,7 +90,7 @@ const Work = ({ data }) => {
                 labels={labels}
                 body={details && details.details}
                 viewUrl={viewUrl}
-                image={{ url: image.file.url }}
+                image={image.fixed}
               />
             )
           )}
@@ -116,8 +117,9 @@ Work.propTypes = {
       }).isRequired,
       viewUrl: PropTypes.string,
       image: PropTypes.shape({
-        file: PropTypes.shape({
-          url: PropTypes.string.isRequired,
+        fixed: PropTypes.shape({
+          src: PropTypes.string.isRequired,
+          srcWebp: PropTypes.string.isRequired,
         }).isRequired,
       }).isRequired,
       contentful_id: PropTypes.string.isRequired,

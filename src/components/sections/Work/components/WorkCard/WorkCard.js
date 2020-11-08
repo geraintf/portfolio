@@ -7,6 +7,7 @@ import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { breakpoints, spacing, typography, colors } from "src/theme";
 
 import SkillLabels from "src/components/SkillLabels/SkillLabels";
+import Image from "src/components/Image/Image";
 
 const StyledWorkCard = styled.div`
   display: flex;
@@ -63,12 +64,6 @@ const StyledWorkImageContainer = styled.div`
   }
 `;
 
-const StyledWorkImage = styled.img`
-  height: 100px;
-  width: 100px;
-  margin: auto 0;
-`;
-
 const StyledTitle = styled.h3`
   margin: 0 0 ${spacing.xs} 0;
 `;
@@ -110,7 +105,7 @@ const StyledAnchorContainer = styled.div`
 const WorkCard = ({ title, subTitle, labels, body, viewUrl, image }) => (
   <StyledWorkCard>
     <StyledWorkImageContainer>
-      <StyledWorkImage src={image.url} />
+      <Image src={image.src} srcWebp={image.srcWebp} />
     </StyledWorkImageContainer>
 
     <StyledWorkCardContent>
@@ -144,7 +139,8 @@ WorkCard.propTypes = {
   labels: PropTypes.array,
   viewUrl: PropTypes.string,
   image: PropTypes.shape({
-    url: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
+    srcWebp: PropTypes.string.isRequired,
   }).isRequired,
 };
 
