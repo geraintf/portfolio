@@ -12,6 +12,18 @@ import ScrollToTop from "src/components/ScrollToTop/ScrollToTop";
 const Index = () => (
   <Fragment>
     <Header />
+    <div
+      style={{
+        height: "80px",
+        position: "sticky",
+        top: "0",
+        left: "0",
+        right: "0",
+
+        borderBottom: "5px solid #536565",
+        marginTop: "-80px",
+      }}
+    ></div>
     <About />
     <Work />
     <Projects />

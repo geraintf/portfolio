@@ -11,8 +11,6 @@ import Navigation from "./components/Navigation/Navigation";
 const StyledHeaderSection = styled(Section)`
   background: url("./gplaypattern_@2X.png");
 
-  border-bottom: 5px solid ${colors.main};
-
   height: 350px;
 
   @media ${breakpoints.smallUp} {
@@ -22,15 +20,18 @@ const StyledHeaderSection = styled(Section)`
 
 const StyledHeaderSectionContent = styled(SectionContent)`
   align-items: stretch;
-
-  @media ${breakpoints.smallUp} {
-    margin-top: ${spacing.md};
-  }
 `;
 
 const StyledHeaderUpper = styled.div`
   display: flex;
   justify-content: space-between;
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  margin: ${spacing.md} ${spacing.lg};
 `;
 
 const StyledHeaderLower = styled.div`
