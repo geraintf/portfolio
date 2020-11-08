@@ -6,7 +6,7 @@ import GlobalStyles from "src/theme/GlobalStyles";
 
 import { initializeAnalytics, sendPageView } from "src/utils/analytics";
 
-initializeAnalytics();
+//initializeAnalytics();
 
 const Layout = ({ children }) => {
   useEffect(() => {
