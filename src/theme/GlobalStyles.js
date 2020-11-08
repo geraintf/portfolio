@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+
 import { spacing, typography, colors } from "./index";
 
 const GlobalStyles = createGlobalStyle`
