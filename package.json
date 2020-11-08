@@ -25,6 +25,7 @@
     "babel-plugin-styled-components": "^1.11.1",
     "dotenv": "^8.2.0",
     "gatsby": "^2.24.79",
+    "gatsby-plugin-brotli": "^2.0.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-styled-components": "^3.3.14",

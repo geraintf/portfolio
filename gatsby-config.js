@@ -22,5 +22,11 @@ module.exports = {
         display: "block",
       },
     },
+    {
+      resolve: "gatsby-plugin-brotli",
+      options: {
+        extensions: ["css", "html", "js", "svg"],
+      },
+    },
   ],
 };
