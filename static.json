@@ -19,5 +19,7 @@
   },
   "https_only": true,
   "error_page": "404.html",
-  "brotli_static": "on"
+  "brotli_static": "on",
+  "brotli": "on",
+  "dynamic_modules": ["brotli_filter", "brotli_static"]
 }
