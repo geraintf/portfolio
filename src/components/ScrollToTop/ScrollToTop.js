@@ -15,7 +15,7 @@ const StyledButton = styled.button`
   border: none;
   border-radius: 6px;
 
-  cursor: pointer;
+  cursor: ${({ shouldShow }) => (shouldShow ? "pointer" : "initial")};
 
   position: fixed;
   bottom: ${spacing.md};
@@ -30,7 +30,7 @@ const StyledButton = styled.button`
   margin: 0;
 
   &:hover {
-    opacity: 1;
+    opacity: ${({ shouldShow }) => (shouldShow ? "1" : "0")};
   }
 
   @media ${breakpoints.smallUp} {
