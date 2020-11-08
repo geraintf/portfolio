@@ -68,7 +68,7 @@ const StyledTagline = styled.p`
 
 const Header = () => (
   <StyledHeaderSection>
-    <StyledHeaderSectionContent as="header">
+    <StyledHeaderSectionContent id="#header" as="header">
       <StyledHeaderUpper>
         <div>
           <svg

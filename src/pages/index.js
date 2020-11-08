@@ -7,6 +7,7 @@ import Projects from "src/components/sections/Projects/Projects";
 import Posts from "src/components/sections/Posts/Posts";
 import Contact from "src/components/sections/Contact/Contact";
 import Footer from "src/components/sections/Footer/Footer";
+import ScrollToTop from "src/components/ScrollToTop/ScrollToTop";
 
 const Index = () => (
   <Fragment>
@@ -17,6 +18,7 @@ const Index = () => (
     <Posts />
     <Contact />
     <Footer />
+    <ScrollToTop />
   </Fragment>
 );
 
