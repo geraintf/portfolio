@@ -99,7 +99,14 @@ const Work = ({ data }) => {
 
         <StyledLinkedInSection>
           You can read more about my work experiences on{" "}
-          <a href="https://www.linkedin.com/in/geraint-fisher/">LinkedIn</a>.
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/geraint-fisher/"
+          >
+            LinkedIn
+          </a>
+          .
         </StyledLinkedInSection>
       </SectionContent>
     </Section>
