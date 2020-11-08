@@ -1,8 +1,11 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
+import ReactGA from "react-ga";
 
 import GlobalStyles from "src/theme/GlobalStyles";
+
+ReactGA.initialize("G-G4Y7QD6DXC");
 
 const Layout = ({ children }) => (
   <Fragment>
