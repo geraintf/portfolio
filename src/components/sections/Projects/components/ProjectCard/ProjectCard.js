@@ -66,7 +66,12 @@ const ProjectCard = ({ title, body, labels, image, viewUrl, githubUrl }) => (
   <StyledProjectCard>
     <StyledProjectCardUpper>
       <StyledProjectCardImageWrapper>
-        <Image loading="lazy" src={image.src} srcWebp={image.srcWebp} />
+        <Image
+          loading="lazy"
+          src={image.fixed.src}
+          srcWebp={image.fixed.srcWebp}
+          alt={image.description}
+        />
       </StyledProjectCardImageWrapper>
 
       <StyledProjectCardUpperContent>
@@ -79,6 +84,7 @@ const ProjectCard = ({ title, body, labels, image, viewUrl, githubUrl }) => (
               target="_blank"
               rel="noreferrer"
             >
+              <span className="visually-hidden">Open {title}</span>
               <FontAwesomeIcon icon={faExternalLinkAlt} />
             </a>
           ) : null}
@@ -90,6 +96,7 @@ const ProjectCard = ({ title, body, labels, image, viewUrl, githubUrl }) => (
               target="_blank"
               rel="noreferrer"
             >
+              <span className="visually-hidden">Open {title} on github</span>
               <FontAwesomeIcon icon={faGithub} size="lg" />
             </a>
           ) : null}
@@ -110,8 +117,11 @@ ProjectCard.propTypes = {
   body: PropTypes.string.isRequired,
   labels: PropTypes.array,
   image: PropTypes.shape({
-    src: PropTypes.string.isRequired,
-    srcWebp: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    fixed: PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      srcWebp: PropTypes.string.isRequired,
+    }).isRequired,
   }).isRequired,
   viewUrl: PropTypes.string,
   githubUrl: PropTypes.string,

@@ -41,22 +41,27 @@ const StyledContactListItem = styled.li`
 const data = [
   {
     href: "mailto:geraint.fisher@gmail.com",
+    alt: "Email",
     icon: faEnvelope,
   },
   {
     href: "https://github.com/geraintf",
+    alt: "Github",
     icon: faGithub,
   },
   {
     href: "https://www.linkedin.com/in/geraint-fisher/",
+    alt: "LinkedIn",
     icon: faLinkedinIn,
   },
   {
     href: "https://medium.com/@geraintf",
+    alt: "Medium",
     icon: faMedium,
   },
   {
     href: "https://twitter.com/geraintf",
+    alt: "Twitter",
     icon: faTwitter,
   },
 ];
@@ -69,9 +74,10 @@ const Contact = () => (
       <SectionSubHeading>You can find me all over the web.</SectionSubHeading>
 
       <StyledContactList>
-        {data.map(({ href, icon }, i) => (
+        {data.map(({ href, icon, alt }, i) => (
           <StyledContactListItem key={i}>
             <a href={href}>
+              <span className="visually-hidden">{alt}</span>
               <FontAwesomeIcon icon={icon} size="2x" />
             </a>
           </StyledContactListItem>

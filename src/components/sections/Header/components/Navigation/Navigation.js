@@ -148,6 +148,7 @@ const Navigation = () => {
           toggle={setIsOpen}
           direction="right"
           rounded
+          label={isOpen ? "Close navigation menu" : "Open navigation menu"}
         />
       </StyledNavToggle>
       <StyledOverlay onClick={() => setIsOpen(!isOpen)} />

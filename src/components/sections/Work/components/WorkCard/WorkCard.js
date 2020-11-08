@@ -107,7 +107,11 @@ const StyledAnchorContainer = styled.div`
 const WorkCard = ({ title, subTitle, labels, body, viewUrl, image }) => (
   <StyledWorkCard>
     <StyledWorkImageContainer>
-      <Image src={image.src} srcWebp={image.srcWebp} />
+      <Image
+        src={image.fixed.src}
+        srcWebp={image.fixed.srcWebp}
+        alt={image.description}
+      />
     </StyledWorkImageContainer>
 
     <StyledWorkCardContent>
@@ -146,8 +150,11 @@ WorkCard.propTypes = {
   labels: PropTypes.array,
   viewUrl: PropTypes.string,
   image: PropTypes.shape({
-    src: PropTypes.string.isRequired,
-    srcWebp: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    fixed: PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      srcWebp: PropTypes.string.isRequired,
+    }).isRequired,
   }).isRequired,
 };
 

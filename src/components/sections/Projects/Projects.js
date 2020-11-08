@@ -46,6 +46,7 @@ const query = graphql`
           details
         }
         image {
+          description
           fixed(height: 100, width: 100, quality: 100) {
             srcWebp
             src
@@ -101,7 +102,7 @@ const Projects = ({ data }) => {
                 body={details.details}
                 viewUrl={viewUrl}
                 githubUrl={githubUrl}
-                image={image.fixed}
+                image={image}
               />
             )
           )}
@@ -122,6 +123,7 @@ Projects.propTypes = {
       }).isRequired,
       viewUrl: PropTypes.string,
       image: PropTypes.shape({
+        description: PropTypes.string.isRequired,
         fixed: PropTypes.shape({
           src: PropTypes.string.isRequired,
           srcWebp: PropTypes.string.isRequired,

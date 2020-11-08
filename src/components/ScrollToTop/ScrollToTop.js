@@ -64,6 +64,7 @@ const ScrollToTop = () => {
 
   return (
     <StyledButton shouldShow={shouldShow} onClick={onClick}>
+      <span className="visually-hidden">Scroll to top</span>
       <FontAwesomeIcon icon={faCaretUp} size="lg" />
     </StyledButton>
   );
