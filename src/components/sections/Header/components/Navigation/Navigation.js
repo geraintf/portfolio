@@ -39,7 +39,7 @@ const StyledList = styled.ul`
   transition: transform ease-in-out 400ms;
 
   .open > & {
-    transform: none;
+    transform: translateX(0);
   }
 
   @media ${breakpoints.smallUp} {
