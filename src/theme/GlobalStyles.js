@@ -1,5 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
+
+// This import stops fontawesome icons being rendered without a size on server
+import "@fortawesome/fontawesome-svg-core/styles.css";
+
 import { spacing, typography, colors } from "./index";
 
 const GlobalStyles = createGlobalStyle`
