@@ -6,6 +6,8 @@ import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 import { breakpoints, spacing, typography, colors } from "src/theme";
 
+import { sendLinkClick } from "src/utils/analytics";
+
 import SkillLabels from "src/components/SkillLabels/SkillLabels";
 import Image from "src/components/Image/Image";
 
@@ -121,7 +123,12 @@ const WorkCard = ({ title, subTitle, labels, body, viewUrl, image }) => (
 
           {viewUrl ? (
             <StyledAnchorContainer>
-              <a href={viewUrl} target="_blank" rel="noreferrer">
+              <a
+                onClick={() => sendLinkClick(viewUrl, "WorkCard")}
+                href={viewUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
                 View <FontAwesomeIcon icon={faExternalLinkAlt} size="sm" />
               </a>
             </StyledAnchorContainer>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Hamburger from "hamburger-react";
+import ReactGA from "react-ga";
 
 import { spacing, colors, breakpoints, typography } from "src/theme";
 
@@ -132,6 +133,8 @@ const Navigation = () => {
     setIsOpen(false);
 
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+
+    ReactGA.pageview(id);
   };
 
   return (
