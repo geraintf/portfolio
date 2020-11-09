@@ -97,7 +97,13 @@ const Posts = ({ data }) => {
         </StyledPostList>
 
         <p>
-          <a href="https://medium.com/@geraintf">See All My Posts</a>
+          <a
+            href="https://medium.com/@geraintf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            See All My Posts
+          </a>
         </p>
       </SectionContent>
     </StyledPostsSection>
