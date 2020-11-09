@@ -8,7 +8,6 @@ import { breakpoints, spacing, typography } from "src/theme";
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
 import SectionHeading from "src/components/SectionHeading/SectionHeading";
-import { sendLinkClick } from "../../../utils/analytics";
 
 const StyledPostsSection = styled(Section)``;
 
@@ -89,12 +88,7 @@ const Posts = ({ data }) => {
               </StyledPostDate>
               <div>
                 <p>{description}</p>
-                <a
-                  onClick={() => sendLinkClick(url, "Post")}
-                  href={url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href={url} target="_blank" rel="noreferrer">
                   Read
                 </a>
               </div>

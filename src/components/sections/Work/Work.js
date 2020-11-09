@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 
-import { OutboundLink } from "gatsby-plugin-google-analytics";
-
 import { breakpoints, spacing } from "src/theme";
 
 import Section from "src/components/Section/Section";
@@ -101,10 +99,7 @@ const Work = ({ data }) => {
 
         <StyledLinkedInSection>
           You can read more about my work experiences on{" "}
-          <OutboundLink href="https://www.linkedin.com/in/geraint-fisher/">
-            LinkedIn
-          </OutboundLink>
-          .
+          <a href="https://www.linkedin.com/in/geraint-fisher/">LinkedIn</a>.
         </StyledLinkedInSection>
       </SectionContent>
     </Section>

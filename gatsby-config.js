@@ -28,14 +28,5 @@ module.exports = {
         extensions: ["css", "html", "js", "svg"],
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "G-4RRCLHZ1D0",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: true,
-      },
-    },
   ],
 };
