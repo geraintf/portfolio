@@ -9,7 +9,7 @@ import SectionContent from "src/components/SectionContent/SectionContent";
 import Navigation from "./components/Navigation/Navigation";
 
 const StyledHeaderSection = styled(Section)`
-  background: url("./gplaypattern_@2X.png");
+  background: url("/gplaypattern_@2X.png");
 
   border-bottom: 5px solid ${colors.main};
 
