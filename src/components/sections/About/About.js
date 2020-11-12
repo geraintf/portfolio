@@ -29,7 +29,6 @@ const StyledAboutSectionContent = styled(SectionContent)`
   padding: ${spacing.md};
   background-color: ${colors.main};
   border-radius: 4px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 
   @media ${breakpoints.mediumUp} {
     margin: ${spacing.lg} 0 ${spacing.md} 0;

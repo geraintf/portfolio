@@ -13,7 +13,6 @@ import Image from "src/components/Image/Image";
 
 const StyledProjectCard = styled.li`
   background-color: ${colors.base.white};
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
 
   justify-content: space-between;
