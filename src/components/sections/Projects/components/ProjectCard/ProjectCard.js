@@ -6,7 +6,6 @@ import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import { spacing, colors } from "src/theme";
-import { sendLinkClick } from "src/utils/analytics";
 
 import SkillLabels from "src/components/SkillLabels/SkillLabels";
 import Image from "src/components/Image/Image";
@@ -63,24 +62,14 @@ const ProjectCard = ({ title, labels, image, viewUrl, githubUrl }) => (
 
         <StyledAnchorContainer>
           {viewUrl ? (
-            <a
-              onClick={() => sendLinkClick(viewUrl, "ProjectCard")}
-              href={viewUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={viewUrl} target="_blank" rel="noreferrer">
               <span className="visually-hidden">Open {title}</span>
               <FontAwesomeIcon icon={faExternalLinkAlt} />
             </a>
           ) : null}
 
           {githubUrl ? (
-            <a
-              onClick={() => sendLinkClick(githubUrl, "ProjectCard")}
-              href={githubUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={githubUrl} target="_blank" rel="noreferrer">
               <span className="visually-hidden">Open {title} on github</span>
               <FontAwesomeIcon icon={faGithub} size="lg" />
             </a>

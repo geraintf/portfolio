@@ -1,18 +1,10 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 
 import GlobalStyles from "src/theme/GlobalStyles";
 
-import { initializeAnalytics, sendPageView } from "src/utils/analytics";
-
-initializeAnalytics();
-
 const Layout = ({ children }) => {
-  useEffect(() => {
-    sendPageView();
-  }, []);
-
   return (
     <Fragment>
       <Helmet>
@@ -23,6 +15,19 @@ const Layout = ({ children }) => {
         <title>Geraint Fisher</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <html lang="en" />
+        <script type="text/javascript">
+          {`
+                (function(h,o,t,j,a,r){
+                    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                    h._hjSettings={hjid:2088131,hjsv:6};
+                    a=o.getElementsByTagName('head')[0];
+                    r=o.createElement('script');r.async=1;
+                    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                    a.appendChild(r);
+                })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+          `}
+        </script>
+        ;
       </Helmet>
       <GlobalStyles />
       {children}
