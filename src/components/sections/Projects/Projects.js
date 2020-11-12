@@ -42,9 +42,6 @@ const query = graphql`
         contentful_id
         title
         labels
-        details {
-          details
-        }
         image {
           description
           fixed(height: 100, width: 100, quality: 100) {
@@ -86,20 +83,11 @@ const Projects = ({ data }) => {
 
         <StyledProjectList>
           {projectData.map(
-            ({
-              title,
-              labels,
-              details,
-              viewUrl,
-              image,
-              contentful_id,
-              githubUrl,
-            }) => (
+            ({ title, labels, viewUrl, image, contentful_id, githubUrl }) => (
               <ProjectCard
                 key={contentful_id}
                 title={title}
                 labels={labels}
-                body={details.details}
                 viewUrl={viewUrl}
                 githubUrl={githubUrl}
                 image={image}
@@ -118,9 +106,6 @@ Projects.propTypes = {
       order: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       labels: PropTypes.array,
-      details: PropTypes.shape({
-        details: PropTypes.string.isRequired,
-      }).isRequired,
       viewUrl: PropTypes.string,
       image: PropTypes.shape({
         description: PropTypes.string.isRequired,

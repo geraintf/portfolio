@@ -15,66 +15,52 @@ const StyledProjectCard = styled.li`
   background-color: ${colors.base.white};
   border-radius: 4px;
 
-  justify-content: space-between;
   display: flex;
-  flex-direction: column;
 
   padding: ${spacing.md};
 `;
 
-const StyledProjectCardUpperContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-const StyledProjectCardImageWrapper = styled.div`
-  border: 1px solid ${colors.base.grey};
-  width: 100px;
-  height: 100px;
-  border-radius: 4px;
-  opacity: 0.6;
-
-  margin-right: ${spacing.md};
-`;
-
-const StyledProjectCardUpper = styled.div`
-  display: flex;
-`;
-
-const StyledProjectCardLower = styled.div`
+const StyledProjectCardContent = styled.div`
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   justify-content: space-between;
 `;
 
+const StyledProjectCardImageWrapper = styled.div`
+  border: 1px solid ${colors.base.grey};
+  box-sizing: content-box;
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+  opacity: 0.6;
+
+  margin: auto ${spacing.md} auto 0;
+`;
+
 const StyledAnchorContainer = styled.div`
-  margin-top: ${spacing.xs};
+  margin: ${spacing.sm} 0;
 
   a + a {
     margin-left: ${spacing.sm};
   }
 `;
 
-const StyledBodyContainer = styled.p`
-  margin: ${spacing.md} 0;
-`;
-
-const ProjectCard = ({ title, body, labels, image, viewUrl, githubUrl }) => (
+const ProjectCard = ({ title, labels, image, viewUrl, githubUrl }) => (
   <StyledProjectCard>
-    <StyledProjectCardUpper>
-      <StyledProjectCardImageWrapper>
-        <Image
-          loading="lazy"
-          src={image.fixed.src}
-          srcWebp={image.fixed.srcWebp}
-          alt={image.description}
-        />
-      </StyledProjectCardImageWrapper>
+    <StyledProjectCardImageWrapper>
+      <Image
+        loading="lazy"
+        src={image.fixed.src}
+        srcWebp={image.fixed.srcWebp}
+        alt={image.description}
+      />
+    </StyledProjectCardImageWrapper>
 
-      <StyledProjectCardUpperContent>
+    <StyledProjectCardContent>
+      <div>
         <h3>{title}</h3>
+
         <StyledAnchorContainer>
           {viewUrl ? (
             <a
@@ -100,20 +86,16 @@ const ProjectCard = ({ title, body, labels, image, viewUrl, githubUrl }) => (
             </a>
           ) : null}
         </StyledAnchorContainer>
-      </StyledProjectCardUpperContent>
-    </StyledProjectCardUpper>
-
-    <StyledProjectCardLower>
-      <StyledBodyContainer>{body}</StyledBodyContainer>
-
-      <SkillLabels skills={labels} />
-    </StyledProjectCardLower>
+      </div>
+      <div>
+        <SkillLabels skills={labels} />
+      </div>
+    </StyledProjectCardContent>
   </StyledProjectCard>
 );
 
 ProjectCard.propTypes = {
   title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
   labels: PropTypes.array,
   image: PropTypes.shape({
     description: PropTypes.string.isRequired,
