@@ -8,15 +8,14 @@ import { breakpoints, spacing } from "src/theme";
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
 import SectionHeading from "src/components/SectionHeading/SectionHeading";
-import SectionSubHeading from "src/components/SectionSubHeading/SectionSubHeading";
 
 import WorkCard from "./components/WorkCard/WorkCard";
 
 const StyledWorkCards = styled.div`
-  margin-top: ${spacing.md};
+  margin-top: ${spacing.lg};
 
   @media ${breakpoints.mediumUp} {
-    margin-top: ${spacing.lg};
+    margin-top: ${spacing.xl};
   }
 `;
 
@@ -67,11 +66,6 @@ const Work = ({ data }) => {
     <Section>
       <SectionContent id="work">
         <SectionHeading>Work</SectionHeading>
-
-        <SectionSubHeading>
-          I've been working in the technology space since 2013 and have been
-          engineering since 2015.
-        </SectionSubHeading>
 
         <StyledWorkCards>
           {workData.map(

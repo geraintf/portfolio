@@ -25,20 +25,18 @@ const StyledSectionHeading = styled(SectionHeading)`
 
 const StyledAboutSectionContent = styled(SectionContent)`
   align-items: flex-start;
-  margin: ${spacing.lg} ${spacing.md} ${spacing.sm} ${spacing.md};
+  margin: ${spacing.lg} ${spacing.md} 0 ${spacing.md};
   padding: ${spacing.md};
   background-color: ${colors.main};
   border-radius: 4px;
 
   @media ${breakpoints.mediumUp} {
-    margin: ${spacing.lg} 0 ${spacing.md} 0;
+    margin: ${spacing.lg} 0 0 0;
 
     width: 80%;
   }
 
   @media ${breakpoints.largeUp} {
-    margin: ${spacing.xl} 0 ${spacing.lg} 0;
-
     width: 60%;
   }
 `;

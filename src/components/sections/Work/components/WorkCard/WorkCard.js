@@ -22,7 +22,7 @@ const StyledWorkCard = styled.div`
     display: block;
     height: 1px;
     background: ${colors.base.grey};
-    width: 50%;
+    width: 80%;
     margin: ${spacing.lg} auto 0 auto;
   }
 
