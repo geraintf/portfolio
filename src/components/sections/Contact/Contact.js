@@ -71,7 +71,7 @@ const Contact = () => (
     <SectionContent id="contact">
       <SectionHeading>Contact</SectionHeading>
 
-      <SectionSubHeading>You can find me all over the web.</SectionSubHeading>
+      <SectionSubHeading>Get in touch.</SectionSubHeading>
 
       <StyledContactList>
         {data.map(({ href, icon, alt }, i) => (

@@ -80,8 +80,8 @@ const Projects = ({ data }) => {
         <SectionHeading>Projects</SectionHeading>
 
         <SectionSubHeading>
-          I love building things, sometimes for fun, to learn or just out of
-          curiosity. Here are some of my recent projects & experiments.
+          Here are some of my recent projects & experiments. <br /> Sometimes I
+          build for fun, to learn or just out of curiosity.
         </SectionSubHeading>
 
         <StyledProjectList>

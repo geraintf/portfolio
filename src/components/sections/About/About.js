@@ -66,17 +66,19 @@ const About = () => (
       <StyledSectionHeading>About Me</StyledSectionHeading>
 
       <StyledAboutSectionPara>
-        Hi, I'm Geraint, I'm a Senior Javascript/UX engineer based in London.
+        Hi, I'm a Javascript/UI engineer currently based in London, UK. I focus
+        on building great user experiences and advocating for performance.
       </StyledAboutSectionPara>
 
       <StyledAboutSectionPara>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco.
+        I've been working in tech for the past {new Date().getFullYear() - 2013}{" "}
+        years, {new Date().getFullYear() - 2015}+ of which have been spent
+        engineering high profile, high traffic, complex web apps.
       </StyledAboutSectionPara>
 
       <StyledAboutSectionPara>
-        I'm currently using the following stack:
+        I'm always trying out the latest trends in the frontend community,
+        currently I'm using the following tech:
       </StyledAboutSectionPara>
 
       <StyledStackList>
@@ -84,9 +86,9 @@ const About = () => (
           "Javascript (ES6+/ESNext)",
           "CSS/LESS/Styled Components",
           "React/Redux",
-          "HTML5",
-          "Node",
-          "Jest/Enzyme",
+          "Gatsby/Next",
+          "Node/Express",
+          "Jest/Enzyme/Storybook",
         ].map((text, i) => (
           <StyledStackListItem key={i}>
             <FontAwesomeIcon
