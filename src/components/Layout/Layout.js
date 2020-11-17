@@ -5,6 +5,8 @@ import { Helmet } from "react-helmet";
 import GlobalStyles from "src/theme/GlobalStyles";
 
 const Layout = ({ children }) => {
+  const containerId = process.env.GA_CONTAINER_ID;
+
   return (
     <Fragment>
       <Helmet>
@@ -15,6 +17,19 @@ const Layout = ({ children }) => {
         <title>Geraint Fisher</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <html lang="en" />
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${containerId}`}
+        />
+        <script type="text/javascript">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '${containerId}');
+          `}
+        </script>
         <script type="text/javascript">
           {`
                 (function(h,o,t,j,a,r){
