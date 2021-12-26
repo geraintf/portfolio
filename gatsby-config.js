@@ -4,6 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-root-import",

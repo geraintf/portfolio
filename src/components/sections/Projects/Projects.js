@@ -44,10 +44,7 @@ const query = graphql`
         labels
         image {
           description
-          fixed(height: 100, width: 100, quality: 100) {
-            srcWebp
-            src
-          }
+          gatsbyImageData(height: 100, width: 100, quality: 100)
         }
         githubUrl
         viewUrl
@@ -109,10 +106,6 @@ Projects.propTypes = {
       viewUrl: PropTypes.string,
       image: PropTypes.shape({
         description: PropTypes.string.isRequired,
-        fixed: PropTypes.shape({
-          src: PropTypes.string.isRequired,
-          srcWebp: PropTypes.string.isRequired,
-        }).isRequired,
       }).isRequired,
       contentful_id: PropTypes.string.isRequired,
       githubUrl: PropTypes.string,

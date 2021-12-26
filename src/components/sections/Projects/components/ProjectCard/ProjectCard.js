@@ -4,11 +4,11 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import { spacing, colors } from "src/theme";
 
 import SkillLabels from "src/components/SkillLabels/SkillLabels";
-import Image from "src/components/Image/Image";
 
 const StyledProjectCard = styled.li`
   background-color: ${colors.base.white};
@@ -48,11 +48,10 @@ const StyledAnchorContainer = styled.div`
 const ProjectCard = ({ title, labels, image, viewUrl, githubUrl }) => (
   <StyledProjectCard>
     <StyledProjectCardImageWrapper>
-      <Image
-        loading="lazy"
-        src={image.fixed.src}
-        srcWebp={image.fixed.srcWebp}
+      <GatsbyImage
         alt={image.description}
+        image={getImage(image)}
+        objectFit="contain"
       />
     </StyledProjectCardImageWrapper>
 
@@ -88,10 +87,6 @@ ProjectCard.propTypes = {
   labels: PropTypes.array,
   image: PropTypes.shape({
     description: PropTypes.string.isRequired,
-    fixed: PropTypes.shape({
-      src: PropTypes.string.isRequired,
-      srcWebp: PropTypes.string.isRequired,
-    }).isRequired,
   }).isRequired,
   viewUrl: PropTypes.string,
   githubUrl: PropTypes.string,

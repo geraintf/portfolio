@@ -3,11 +3,11 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import { breakpoints, spacing, typography, colors } from "src/theme";
 
 import SkillLabels from "src/components/SkillLabels/SkillLabels";
-import Image from "src/components/Image/Image";
 
 const StyledWorkCard = styled.div`
   display: flex;
@@ -58,6 +58,8 @@ const StyledWorkImageContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: ${spacing.md};
+  flex-basis: 100px;
+  flex-shrink: 0;
 
   @media ${breakpoints.mediumUp} {
     margin-bottom: 0;
@@ -105,10 +107,10 @@ const StyledAnchorContainer = styled.div`
 const WorkCard = ({ title, subTitle, labels, body, viewUrl, image }) => (
   <StyledWorkCard>
     <StyledWorkImageContainer>
-      <Image
-        src={image.fixed.src}
-        srcWebp={image.fixed.srcWebp}
+      <GatsbyImage
         alt={image.description}
+        image={getImage(image)}
+        objectFit="contain"
       />
     </StyledWorkImageContainer>
 
@@ -144,10 +146,6 @@ WorkCard.propTypes = {
   viewUrl: PropTypes.string,
   image: PropTypes.shape({
     description: PropTypes.string.isRequired,
-    fixed: PropTypes.shape({
-      src: PropTypes.string.isRequired,
-      srcWebp: PropTypes.string.isRequired,
-    }).isRequired,
   }).isRequired,
 };
 
