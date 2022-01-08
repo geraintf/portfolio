@@ -4,7 +4,13 @@ import { Helmet } from "react-helmet";
 
 import GlobalStyles from "src/theme/GlobalStyles";
 
-const Layout = ({ children }) => {
+const propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+type IProps = PropTypes.InferProps<typeof propTypes>
+
+const Layout = ({ children }: IProps) => {
   return (
     <Fragment>
       <Helmet>
@@ -48,8 +54,6 @@ const Layout = ({ children }) => {
   );
 };
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+Layout.propTypes = propTypes;
 
 export default Layout;

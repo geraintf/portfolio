@@ -11,16 +11,22 @@ const StyledLabelContainer = styled.div`
   padding-right: ${spacing.sm};
 `;
 
-const SkillLabels = ({ skills }) => (
+const propTypes = {
+  skills: PropTypes.arrayOf(PropTypes.string),
+}
+
+const defaultProps = {
+  skills: [],
+};
+
+type IProps = PropTypes.InferProps<typeof propTypes> & typeof defaultProps
+
+const SkillLabels = ({ skills }: IProps) => (
   <StyledLabelContainer>{skills.join(", ").toString()}</StyledLabelContainer>
 );
 
-SkillLabels.propTypes = {
-  skills: PropTypes.arrayOf(PropTypes.string),
-};
+SkillLabels.propTypes = propTypes;
 
-SkillLabels.defaultProps = {
-  skills: [],
-};
+SkillLabels.defaultProps = defaultProps;
 
 export default SkillLabels;

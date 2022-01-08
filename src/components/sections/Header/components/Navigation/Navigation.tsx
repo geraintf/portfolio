@@ -127,12 +127,16 @@ const StyledNavToggle = styled.div`
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const onClickConstructor = id => event => {
+  const onClickConstructor = (id: string) => (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
 
     setIsOpen(false);
 
-    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
 
     ReactGA.pageview(id);
   };

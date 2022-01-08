@@ -5,7 +5,11 @@ import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 
 import { breakpoints, spacing, colors } from "src/theme";
 
-const StyledButton = styled.button`
+interface StyledButtonProps {
+  shouldShow: boolean;
+}
+
+const StyledButton = styled.button<StyledButtonProps>`
   opacity: ${({ shouldShow }) => (shouldShow ? "0.4" : "0")};
   transition: opacity ease-in 150ms;
 
@@ -39,9 +43,14 @@ const StyledButton = styled.button`
   }
 `;
 
-const onClick = event => {
+const onClick = (event: React.MouseEvent<HTMLElement>) => {
   event.currentTarget.blur();
-  document.getElementById("#header").scrollIntoView({ behavior: "smooth" });
+
+  const headerEl = document.getElementById("#header");
+
+  if (headerEl) {
+    headerEl.scrollIntoView({ behavior: "smooth" });
+  }
 };
 
 const ScrollToTop = () => {
