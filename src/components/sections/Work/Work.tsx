@@ -15,7 +15,7 @@ const StyledWorkCards = styled.div`
   margin-top: ${spacing.lg};
 
   @media ${breakpoints.mediumUp} {
-    margin-top: ${spacing.xl};
+    margin-top: ${spacing.lg};
   }
 `;
 

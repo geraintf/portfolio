@@ -20,7 +20,7 @@ const StyledProjectList = styled.ul`
   grid-template-columns: 1fr;
   grid-gap: ${spacing.md};
 
-  margin: ${spacing.md} 0;
+  margin: ${spacing.lg} 0 ${spacing.md} 0;
 
   @media ${breakpoints.mediumUp} {
     grid-template-columns: 1fr 1fr;

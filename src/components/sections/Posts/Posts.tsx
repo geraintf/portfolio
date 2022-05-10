@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 
-import { breakpoints, spacing, typography } from "src/theme";
+import { breakpoints, spacing, typography, colors } from "src/theme";
 
 import Section from "src/components/Section/Section";
 import SectionContent from "src/components/SectionContent/SectionContent";
@@ -16,6 +16,25 @@ const StyledPost = styled.li`
   justify-content: space-between;
   display: flex;
   flex-direction: column;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: ${colors.base.grey};
+    width: 80%;
+    margin: ${spacing.lg} auto 0 auto;
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+
+  @media ${breakpoints.mediumUp} {
+    &:last-child::after {
+      display: block;
+    }
+  }
 `;
 
 const StyledPostList = styled.ul`
@@ -24,13 +43,13 @@ const StyledPostList = styled.ul`
   grid-template-columns: 1fr;
   grid-gap: ${spacing.md};
 
-  margin: ${spacing.lg} 0 ${spacing.md} 0;
+  margin: ${spacing.xl} 0 ${spacing.lg} 0;
 
   @media ${breakpoints.mediumUp} {
     grid-template-columns: 1fr 1fr;
     grid-gap: ${spacing.lg};
 
-    margin: ${spacing.lg} 0 ${spacing.lg} 0;
+    margin: ${spacing.xl} 0 ${spacing.lg} 0;
   }
 `;
 
@@ -64,7 +83,7 @@ const Posts = ({ data }) => {
   const seen = new Set();
 
   data
-    .sort((a, b) => new Date(a.date) - new Date(b.order))
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
     .forEach(d => {
       if (seen.has(d.contentful_id)) return;
 
@@ -102,7 +121,7 @@ const Posts = ({ data }) => {
             target="_blank"
             rel="noreferrer"
           >
-            See All My Posts
+            See All
           </a>
         </p>
       </SectionContent>

@@ -13,7 +13,7 @@ const StyledHeaderSection = styled(Section)`
 
   border-bottom: 5px solid ${colors.main};
 
-  height: 350px;
+  height: 425px;
 
   @media ${breakpoints.smallUp} {
     height: 500px;
@@ -56,7 +56,7 @@ const StyledHeaderTextArea = styled.div`
 `;
 
 const StyledHeadline = styled.h1`
-  margin: 0 0 ${spacing.md} 0;
+  margin: 0 0 ${spacing.lg} 0;
 `;
 
 const StyledTagline = styled.p`
@@ -101,7 +101,7 @@ const Header = () => (
         <StyledHeaderTextArea>
           <StyledHeadline>Hi, I'm Geraint.</StyledHeadline>
           <StyledTagline>
-            Senior Javascript/UI engineer based in London.
+            A Senior Javascript/UI engineer based in London.
           </StyledTagline>
         </StyledHeaderTextArea>
       </StyledHeaderLower>
