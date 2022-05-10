@@ -10,10 +10,10 @@ const StyledSectionContent = styled.section`
   height: 100%;
   width: 100%;
 
-  padding: ${spacing.md};
+  padding: ${spacing.lg};
 
   @media ${breakpoints.smallUp} {
-    padding: ${spacing.sm} ${spacing.lg} ${spacing.lg} ${spacing.lg};
+    padding: ${spacing.lg} ${spacing.lg} ${spacing.lg} ${spacing.lg};
   }
 `;
 

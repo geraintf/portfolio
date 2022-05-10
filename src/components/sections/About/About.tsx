@@ -25,13 +25,13 @@ const StyledSectionHeading = styled(SectionHeading)`
 
 const StyledAboutSectionContent = styled(SectionContent)`
   align-items: flex-start;
-  margin: ${spacing.lg} ${spacing.md} 0 ${spacing.md};
-  padding: ${spacing.md};
+  margin: ${spacing.xl} ${spacing.md} 0 ${spacing.md};
+  padding: ${spacing.md} ${spacing.md} ${spacing.lg} ${spacing.md};
   background-color: ${colors.main};
   border-radius: 4px;
 
   @media ${breakpoints.mediumUp} {
-    margin: ${spacing.lg} 0 0 0;
+    margin: ${spacing.xl} 0 0 0;
 
     width: 80%;
   }
